@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+
+body{
+ background-image: url('https://cdn.pixabay.com/photo/2020/01/09/00/55/ballot-4751566__480.png');
+ background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.firstheader{
+	text-align: center; /*this is header2 in index.html*/
+}
+
+.button{			/* "vastaa kysymyksiin" button*/
+  background-color: lightcyan;
+  border: 1px solid blue;
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  margin: 6px 4px;
+  cursor: pointer;
+ height:20%;
+ font-size: 20px;
+}
+
+.questions{   /*this is div for "vastaa kysymyksiin button"*/
+	text-align:center;
+}
+
+.candidates{   /*this is div for "katso ehdokkaat button"*/
+	text-align:center;
+}
+.voteimg{
+	 width: 100%;
+    height: auto;
+    padding: 20px;
+}

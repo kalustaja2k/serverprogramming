@@ -27,7 +27,9 @@
             <br><br>       
             <button class="loginbutton" type="submit">Kirjaudu</button>
         </form>
+        <img src="../images/admin.jpg" alt=admin width=250 height=250>
     </div>
+   
     
     <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>

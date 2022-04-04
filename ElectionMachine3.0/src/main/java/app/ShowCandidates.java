@@ -30,7 +30,7 @@ public class ShowCandidates extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		System.out.println("hei");
+		
 		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 		

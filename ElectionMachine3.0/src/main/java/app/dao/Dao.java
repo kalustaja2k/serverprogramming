@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import app.User;
 
 import app.Candidates;
+import app.Questions;
 
 
 public class Dao {
@@ -57,6 +58,24 @@ public class Dao {
 		}
 		return count;
 	}
+	public ArrayList<Questions> readAllQuestions() {
+		ArrayList<Questions> list=new ArrayList<>();
+		Statement stmt=null;
+		try {
+			stmt = conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from kysymykset");
+			while (rs.next()) {
+				Questions question=new Questions();
+				question.setId(rs.getInt("Id"));
+				question.setKysymys(rs.getString("Kysymys"));
+				list.add(question);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+		}
 	
 	public ArrayList<Candidates> readAllCandidates() {
 		ArrayList<Candidates> list=new ArrayList<>();

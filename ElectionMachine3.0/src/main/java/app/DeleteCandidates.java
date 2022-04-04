@@ -63,17 +63,15 @@ public class DeleteCandidates extends HttpServlet {
 		try {
 			dao.deleteCandidate(Integer.parseInt(request.getParameter("Ehdokas_id")));
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		} catch (SQLException e) {	
 			e.printStackTrace();
 		}
 
 		dao.close();
 
 		// Back to list after actions
-		//RequestDispatcher rd = request.getRequestDispatcher("/showdata");
+		//RequestDispatcher rd = request.getRequestDispatcher("/");
 		//rd.forward(request, response);
 		response.sendRedirect("/admin.jsp");
 	}

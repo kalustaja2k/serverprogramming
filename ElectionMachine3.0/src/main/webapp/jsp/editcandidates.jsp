@@ -16,7 +16,7 @@
 </head>
 <body>
 <h2>Muokkaa ehdokkaiden tietoja</h2>
-<form action='/editgame' method='post'>
+<form action='/editcandidates' method='post'>
 		Etunimi: <input type='text' name='breed' value='${sessionScope.candidate.etunimi }'><br>
 		Sukunimi: <input type='text' name='weight' value='${sessionScope.candidate.sukunimi }'><br>
 		Puolue: <input type='text' name='breed' value='${sessionScope.candidate.puolue }'><br>

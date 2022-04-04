@@ -18,21 +18,27 @@ import javax.servlet.http.*;
 		)
 public class Login extends HttpServlet {
 
-	 
-	   public void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		doGet(request, response);
+	}
+	
+	
+	   public void doGet(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
 	        String email = request.getParameter("email");
 	        String password = request.getParameter("salasana");
 	         
+	        
 	        Dao dao = new Dao();
 	        try {
 	            User user = dao.checkLogin(email, password);
-	            String destPage = "login.jsp";
+	            String destPage = "/jsp/login.jsp";
 	             
 	            if (user != null) {
 	                HttpSession session = request.getSession();
 	                session.setAttribute("user", user);
-	                destPage = "home.jsp"; //this needs to be changed later
+	                destPage = "addcandidate.jsp"; //this needs to be changed later
 	            } else {
 	                String message = "Käyttäjätunnus tai salasana väärin";
 	                request.setAttribute("message", message);

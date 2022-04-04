@@ -16,8 +16,8 @@
 <body>
     <div style="text-align: center">
         <h1>Ylläpito</h1>
-        <form action="login" method="post">
-            <label for="email">Sähköposti:</label>
+        <form action="/login" method="post">
+            <label for="email">Käyttäjätunnus:</label>
             <input name="email" size="30" />
             <br><br>
             <label for="password">Salasana:</label>

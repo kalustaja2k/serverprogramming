@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Vastaa kysymyksiin</title>
+<title>Vastaa kysymyksiin</title> 
 </head>
 <body>
 <form method="post" action="bestCandidates">

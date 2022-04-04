@@ -33,7 +33,7 @@ public class DeleteCandidates extends HttpServlet {
 
 		String idValue = request.getParameter("Ehdokas_id");
 
-		if ( idValue != null ) {
+		if (idValue != null ) {
 			try {
 				int id = Integer.parseInt(idValue);
 
@@ -50,7 +50,7 @@ public class DeleteCandidates extends HttpServlet {
 			}
 		} else {
 			// Back to list
-			response.sendRedirect("jsp/admin.jsp");
+			response.sendRedirect("jsp/deletecandidates.jsp");
 
 		}
 	}
@@ -63,16 +63,19 @@ public class DeleteCandidates extends HttpServlet {
 		try {
 			dao.deleteCandidate(Integer.parseInt(request.getParameter("Ehdokas_id")));
 		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (SQLException e) {	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	
 
 		dao.close();
 
 		// Back to list after actions
 		//RequestDispatcher rd = request.getRequestDispatcher("/");
 		//rd.forward(request, response);
-		response.sendRedirect("/admin.jsp");
+		response.sendRedirect("jsp/admin.jsp");
 	}
 }

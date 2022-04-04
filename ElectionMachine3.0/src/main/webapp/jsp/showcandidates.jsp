@@ -14,29 +14,17 @@
 <meta charset="ISO-8859-1">
 <title>Ehdokkaat</title>
  <link rel="stylesheet" type="text/css" href="../css/header.css">
-  <link rel="stylesheet" type="text/css" href="../css/main.css">
+ <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
 
-<table class="candidatestable">
-<tr>
-	<th>Ehdokas Id</th>
-	<th>Etunimi</th>
-	<th>Sukunimi</th>
-	<th>Puolue</th>
-	<th>Kotikunta</th>
-	<th>Ikä</th>
-	<th>Miksi lähdit ehdolle eduskuntaan?</th>
-	<th>Mitä asioita haluat edistää?</th>
-	<th>Ammatti</th>
-</tr>
-
+<div class="showcandidates">
 <c:forEach var="candidate" items="${sessionScope.allcandidates}">
 
 
-<h2><b>${candidate.ehdokas_id}:</b> ${candidate.etunimi} ${candidate.sukunimi} </h2>
+<h2 style="text-align:center;"><b>${candidate.ehdokas_id}:</b> ${candidate.etunimi} ${candidate.sukunimi} </h2>
 
-<b>Puolue: </b><br>
+<b style="text-align:center;">Puolue: </b><br>
 
 ${candidate.puolue} <br>
 
@@ -61,11 +49,8 @@ ${candidate.edistaa}<br>
 ${candidate.ammatti}<br>
 
 <br> <br>
-
-
-
 </c:forEach>
-</table>
+</div>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

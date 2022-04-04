@@ -33,7 +33,7 @@ public class DeleteCandidates extends HttpServlet {
 
 		String idValue = request.getParameter("Ehdokas_id");
 
-		if ( idValue != null ) {
+		if (idValue != null ) {
 			try {
 				int id = Integer.parseInt(idValue);
 
@@ -50,7 +50,7 @@ public class DeleteCandidates extends HttpServlet {
 			}
 		} else {
 			// Back to list
-			response.sendRedirect("jsp/admin.jsp");
+			response.sendRedirect("jsp/deletecandidates.jsp");
 
 		}
 	}
@@ -69,12 +69,13 @@ public class DeleteCandidates extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	
 
 		dao.close();
 
 		// Back to list after actions
-		//RequestDispatcher rd = request.getRequestDispatcher("/showdata");
+		//RequestDispatcher rd = request.getRequestDispatcher("/");
 		//rd.forward(request, response);
-		response.sendRedirect("/admin.jsp");
+		response.sendRedirect("jsp/admin.jsp");
 	}
 }

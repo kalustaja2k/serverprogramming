@@ -128,6 +128,7 @@ public class Dao {
 		}
 		return count;
 	}
+	
 	public int deleteCandidate(int Ehdokas_id) throws SQLException {
 		
 		int count = 0;

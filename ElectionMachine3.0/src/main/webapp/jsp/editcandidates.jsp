@@ -16,15 +16,17 @@
 </head>
 <body>
 <h2>Muokkaa ehdokkaiden tietoja</h2>
+  
 <form action='/editcandidates' method='post'>
 		Etunimi: <input type='text' name='breed' value='${sessionScope.candidate.etunimi }'><br>
 		Sukunimi: <input type='text' name='weight' value='${sessionScope.candidate.sukunimi }'><br>
 		Puolue: <input type='text' name='breed' value='${sessionScope.candidate.puolue }'><br>
 		Kotikunta: <input type='text' name='breed' value='${sessionScope.candidate.kotikunta }'><br>
-		Ik‰: <input type='text' name='breed' value='${sessionScope.candidate.ika }'><br>
+		Ik√§: <input type='text' name='breed' value='${sessionScope.candidate.ika }'><br>
 		Miksi ehdolle: <input type='text' name='breed' value='${sessionScope.candidate.ehdolle}'><br>
-		Mit‰ haluat edist‰‰: <input type='text' name='breed' value='${sessionScope.candidate.edistaa }'><br>
+		Mit√§ haluat edist√§√§: <input type='text' name='breed' value='${sessionScope.candidate.edistaa }'><br>
 		Ammatti: <input type='text' name='breed' value='${sessionScope.candidate.ammatti }'><br>
+
 		
 		<input type="hidden" name="id" value="${sessionScope.candidate.ehdokas_id }">
 				

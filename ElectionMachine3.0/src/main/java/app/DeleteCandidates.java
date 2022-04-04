@@ -20,7 +20,7 @@ import app.Candidates;
 
 @WebServlet(
 		name = "DeleteCandidates",
-		urlPatterns = {"/deletecandidate"}
+		urlPatterns = {"/deletecandidates"}
 		)
 public class DeleteCandidates extends HttpServlet {
 
@@ -50,7 +50,7 @@ public class DeleteCandidates extends HttpServlet {
 			}
 		} else {
 			// Back to list
-			response.sendRedirect("/admin.jsp");
+			response.sendRedirect("jsp/admin.jsp");
 
 		}
 	}

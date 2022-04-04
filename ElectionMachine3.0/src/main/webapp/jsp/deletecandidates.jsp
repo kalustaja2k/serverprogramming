@@ -14,7 +14,7 @@
 </head>
 <body>
 
-	<form action='./deletecandidates' method='post'>
+	<form action='./DeleteCandidates' method='post'>
 		<input type="hidden" name="id" value="${sessionScope.game.id }">		
 		<input type='submit' name='ok' value='Delete'>
 	</form>

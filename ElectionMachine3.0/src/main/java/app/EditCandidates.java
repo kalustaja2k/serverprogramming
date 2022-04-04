@@ -70,7 +70,7 @@ public class EditCandidates extends HttpServlet {
 
 	private Candidates readCandidates(HttpServletRequest request) {
 		Candidates candidates=new Candidates();
-		candidates.setEhdokas_id(Integer.parseInt(request.getParameter("id")));
+		candidates.setEhdokas_id(Integer.parseInt(request.getParameter("Ehdokas_id")));
 		candidates.setEtunimi(request.getParameter("Etunimi"));
 		candidates.setSukunimi(request.getParameter("Sukunimi"));
 		candidates.setPuolue(request.getParameter("Puolue"));

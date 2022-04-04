@@ -58,8 +58,8 @@ ${candidate.edistaa}<br>
 
 ${candidate.ammatti}<br>
 
-<a href="/editcandidates?id=${candidate.id }">Edit</a>
-<a href="/deletecandidates?id=${candidate.id }">Delete</a>
+<a href="/editcandidates?id=${candidate.ehdokas_id }">Edit</a>
+<a href="/deletecandidates?id=${candidate.ehdokas_id }">Delete</a>
 
 <br> <br>
 

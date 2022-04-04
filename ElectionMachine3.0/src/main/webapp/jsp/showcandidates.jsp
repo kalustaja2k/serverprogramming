@@ -13,10 +13,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Ehdokkaat</title>
+ <link rel="stylesheet" type="text/css" href="../css/header.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
 
-<table>
+<table class="candidatestable">
 <tr>
 	<th>Ehdokas Id</th>
 	<th>Etunimi</th>

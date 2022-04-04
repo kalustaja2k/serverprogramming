@@ -128,20 +128,22 @@ public class Dao {
 		}
 		return count;
 	}
-	public int deleteCandidate(Candidates candidate) throws SQLException {
+	public int deleteCandidate(int Ehdokas_id) throws SQLException {
 		
-		String sql = "DELETE FROM ehdokkaat WHERE Ehdokas_id=?";
-		 
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setInt(1, candidate.getEhdokas_id());
-		 
-		int remove = stmt.executeUpdate();
-		if (remove > 0) {
-		    System.out.println("Ehdokas poistettu onnistuneesti!");
+		int count = 0;
+		String sql = "DELETE from ehdokkaat WHERE Ehdokas_id=?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setInt(1, Ehdokas_id);
+			
+			count = stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-		
-		return remove;
+		return count;
 	}
+
 	
 	public Candidates getCandidateInfo(int id) {
 		Candidates result = null;

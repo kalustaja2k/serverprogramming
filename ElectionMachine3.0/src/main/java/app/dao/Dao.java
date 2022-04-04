@@ -173,7 +173,7 @@ public class Dao {
 	
 	 public User checkLogin(String email, String password) throws SQLException,
      ClassNotFoundException {
- String sql = "SELECT * FROM kirjautuminen WHERE email = ? and password = ?";
+ String sql = "SELECT * FROM kirjautuminen WHERE nimi = ? and salasana = ?";
  PreparedStatement statement = conn.prepareStatement(sql);
  statement.setString(1, email);
  statement.setString(2, password);

@@ -12,6 +12,7 @@
 <head>
 <meta charset="utf-8">
 <title>Vaalikone</title>
+<link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
     <div style="text-align: center">
@@ -23,10 +24,12 @@
             <label for="password">Salasana:</label>
             <input type="password" name="password" size="30" />
             <br>${message}
-            <br><br>           
-            <button type="submit">Kirjaudu</button>
+            <br><br>       
+            <button class="loginbutton" type="submit">Kirjaudu</button>
         </form>
+        <img src="../images/admin.jpg" alt=admin width=250 height=250>
     </div>
+   
     
     <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>

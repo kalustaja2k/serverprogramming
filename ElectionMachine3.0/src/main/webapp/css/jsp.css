@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+/*this css is for the rest of the jsp files*/
+
+.showcandidates{ /*this is showcandidates.jsp showcandidates div*/
+	text-align:center;
+}
+
+.loginbutton {   /*login button*/
+  background-color: lightcyan !important;
+  border: 1px solid blue !important;
+  color: black !important;
+  padding: 10px 10px !important;
+  text-decoration: none !important;
+  margin: 6px 4px !important;
+  cursor: pointer !important;
+ height:20% !important;
+ font-size: 20px !important;
+}
+
+input{ /*käyttäjätunnus & salasana fields in admin login*/
+	 background-color: lightcyan;
+  border: 1px solid blue;
+  color: black;
+  padding: 5px 5px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+ height:10%;
+}
+
+
+

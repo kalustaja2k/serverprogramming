@@ -20,7 +20,7 @@
 
 <div class="showcandidates">
 <c:forEach var="candidate" items="${sessionScope.allcandidates}">
-
+<!-- comment -->
 
 <h2 style="text-align:center;"><b>${candidate.ehdokas_id}:</b> ${candidate.etunimi} ${candidate.sukunimi} </h2>
 

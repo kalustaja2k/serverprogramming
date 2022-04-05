@@ -57,13 +57,13 @@ public class AddCandidate extends HttpServlet {
 		// TODO Auto-generated method stub
 		Candidates candidate=new Candidates();
 		candidate.setEhdokas_id(request.getParameter("ehdokas_id"));
-		candidate.setEtunimi(request.getParameter("etunimi"));
 		candidate.setSukunimi(request.getParameter("sukunimi"));
+		candidate.setEtunimi(request.getParameter("etunimi"));
 		candidate.setPuolue(request.getParameter("puolue"));
 		candidate.setKotikunta(request.getParameter("kotikunta"));
 		candidate.setIka(request.getParameter("ika"));
-		candidate.setEhdolle(request.getParameter("miksi_eduskuntaan"));
-		candidate.setEdistaa(request.getParameter("mita_asioita_haluat_edustaa"));
+		candidate.setEhdolle(request.getParameter("ehdolle"));
+		candidate.setEdistaa(request.getParameter("edistaa"));
 		candidate.setAmmatti(request.getParameter("ammatti"));
 		return candidate;
 	}

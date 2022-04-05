@@ -77,6 +77,7 @@ public class Candidates implements Serializable{
 	}
 	
 	
+	
 	public int getEhdokas_id() {
 		return ehdokas_id;
 	}

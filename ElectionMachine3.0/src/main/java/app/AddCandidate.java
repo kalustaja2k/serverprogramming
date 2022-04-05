@@ -45,11 +45,11 @@ public class AddCandidate extends HttpServlet {
 				ArrayList<Candidates> list=dao.readAllCandidates();
 				
 				// print output and close connection
-				printCandidatesList(out, list);
+				//printCandidatesList(out, list);
 				dao.close();
 		
-				//RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
-				//rd.forward(request, response);
+				RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
+				rd.forward(request, response);
 				//out.println("<br><a href='./form.html'>Back to form</a>");
 	}
 	
@@ -68,11 +68,11 @@ public class AddCandidate extends HttpServlet {
 		return candidate;
 	}
 	
-	private void printCandidatesList(PrintWriter out, ArrayList<Candidates> list) {
+	/*private void printCandidatesList(PrintWriter out, ArrayList<Candidates> list) {
 		out.println("<ul>");
 		for (Candidates c:list) {
 			out.println("<li>"+c);
 		}
 		out.println("</ul>");
-	}
+	}*/
 }

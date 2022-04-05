@@ -22,9 +22,7 @@ import app.Candidates;
 		)
 public class ShowCandidates extends HttpServlet {
 	
-	/**
-	 * 
-	 */
+
 	//private static final long serialVersionUID = 1L;
 
 	@Override

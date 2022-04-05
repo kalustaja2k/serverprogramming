@@ -19,8 +19,8 @@
  font-size: 20px !important;
 }
 
-input{ /*käyttäjätunnus & salasana fields in admin login*/
-	 background-color: lightcyan;
+input, [type=password]{ /*käyttäjätunnus & salasana fields in admin login*/
+background-color: lightcyan;
   border: 1px solid blue;
   color: black;
   padding: 5px 5px;

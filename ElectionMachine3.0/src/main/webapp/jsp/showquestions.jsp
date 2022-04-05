@@ -14,6 +14,7 @@
 <title>Vastaa kysymyksiin</title> 
 </head>
 <body>
+<div style=margin-left:10px;>
 <form method="post" action="showquestion">
 <c:forEach var="question" items="${sessionScope.allquestions}">
 
@@ -36,7 +37,8 @@ value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 
 
 </c:forEach> 
- <input type="submit" value="Vastaa" class="button">
+ <input type="submit" value="Vastaa">
 </form>
+</div>
 </body>
 </html>

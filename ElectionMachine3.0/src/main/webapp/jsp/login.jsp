@@ -19,7 +19,7 @@
         <h1>Ylläpito</h1>
         <form action="/login" method="post">
             <label for="email">Käyttäjätunnus:</label>
-            <input name="email" size="30" />
+            <input type="email" name="email" size="30" class="email"/>
             <br><br>
             <label for="password">Salasana:</label>
             <input type="password" name="password" size="30" />

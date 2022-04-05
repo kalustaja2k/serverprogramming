@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Candidates implements Serializable{
 	
+	
 	private int ehdokas_id;
 	private String sukunimi;
 	private String etunimi;
@@ -150,7 +151,9 @@ public class Candidates implements Serializable{
 	public void setEdistaa(String edistaa) {
 		this.edistaa = edistaa;
 	}
-	
+	public String toString() {
+		return ehdokas_id+" "+sukunimi+" "+etunimi+" "+puolue+" "+kotikunta+" "+ika+" "+ehdolle+" "+edistaa+" "+ammatti;
+	}
 	
 	
 

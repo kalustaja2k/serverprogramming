@@ -3,6 +3,8 @@
 
 .showcandidates{ /*this is showcandidates.jsp showcandidates div*/
 	text-align:center;
+	margin-left: 30%;
+	margin-right: 30%
 }
 
 .loginbutton {   /*login button*/

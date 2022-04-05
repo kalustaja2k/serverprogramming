@@ -28,7 +28,7 @@ public class EditCandidates extends HttpServlet {
 		//Create session
 		HttpSession session = request.getSession();
 		
-		String idValue = request.getParameter("id");
+		String idValue = request.getParameter("Ehdokas_id");
 		
 		if ( idValue != null ) {
 			try {

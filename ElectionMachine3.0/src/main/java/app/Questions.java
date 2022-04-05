@@ -1,15 +1,21 @@
 package app;
 
-public class Questions {
+import java.io.Serializable;
+
+public class Questions implements Serializable {
 	
-	private int id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int Kysymys_id;
 	private String kysymys;
 	
-	public int getId() {
-		return id;
+	public int getKysymys_id() {
+		return Kysymys_id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setKysymys_id(int Kysymys_id) {
+		this.Kysymys_id = Kysymys_id;
 	}
 	public String getKysymys() {
 		return kysymys;
@@ -17,10 +23,10 @@ public class Questions {
 	public void setKysymys(String kysymys) {
 		this.kysymys = kysymys;
 	}
-	public void setId(String id) {
+	public void setKysymys_id(String Kysymys_id) {
 		
 		try {
-			this.id = Integer.parseInt(id);
+			this.Kysymys_id = Integer.parseInt(Kysymys_id);
 		}
 		catch(NumberFormatException | NullPointerException e) {
 
@@ -30,9 +36,9 @@ public class Questions {
 		
 	}
 	
-	public Questions(int id, String kysymys) {
-		setId(id);
-		this.kysymys = kysymys;
+	public Questions(int Kysymys_id, String kysymys) {
+		setKysymys_id(Kysymys_id);
+		this.Kysymys_id = Kysymys_id;
 	}
 	public Questions(String kysymys) {
 		this.kysymys = kysymys;

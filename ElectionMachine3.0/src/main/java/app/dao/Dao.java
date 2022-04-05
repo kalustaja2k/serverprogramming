@@ -66,7 +66,7 @@ public class Dao {
 			ResultSet rs=stmt.executeQuery("select * from kysymykset");
 			while (rs.next()) {
 				Questions question=new Questions();
-				question.setId(rs.getInt("Id"));
+				question.setKysymys_id(rs.getInt("Kysymys_id"));
 				question.setKysymys(rs.getString("Kysymys"));
 				list.add(question);
 			}

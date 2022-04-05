@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import app.dao.Dao;
+import app.Questions;
 
 @WebServlet(
 		name = "ShowQuestions",
@@ -22,7 +23,7 @@ public class ShowQuestion extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		// if sessions does not exist, create new one
+	
 		HttpSession session = request.getSession();
 		
 		Dao dao = new Dao();
@@ -41,4 +42,13 @@ public class ShowQuestion extends HttpServlet {
 		doGet(request, response);
 	}
 
+
+
+private Questions readQuestion(HttpServletRequest request) {
+	Questions question=new Questions();
+	question.setKysymys_id(Integer.parseInt(request.getParameter("Kysymys_id")));
+	question.setKysymys(request.getParameter("Kysymys"));
+
+	return question;
+}
 }

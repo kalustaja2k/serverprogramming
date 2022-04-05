@@ -29,6 +29,9 @@
 	<th>Ammatti</th>
 </tr>
 
+	<a href="/addcandidate"> <!-- redirect to add candidate here -->
+			<input class="button" type="submit" value="Lisää ehdokas" />
+		</a>
 <c:forEach var="candidate" items="${sessionScope.allcandidates}">
 
 

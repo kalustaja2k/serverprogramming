@@ -11,30 +11,30 @@ public class Candidates implements Serializable{
 	private String puolue;
 	private String kotikunta;
 	private int ika;
-	private String ammatti;
 	private String ehdolle;
 	private String edistaa;
+	private String ammatti;
 	
 	
 	public Candidates()
 	{
 		
 	}
-	public Candidates(String sukunimi, String etunimi, String puolue, String koti, int ika, String ammatti, String ehdolle, String edistaa)
+	public Candidates(String sukunimi, String etunimi, String puolue, String koti, int ika, String ehdolle, String edistaa, String ammatti)
 	{
 		this.sukunimi = sukunimi;
 		this.etunimi = etunimi;
 		this.puolue = puolue;
 		this.kotikunta = koti;
 		setIka(ika);
-		this.ammatti = ammatti;
 		this.ehdolle = ehdolle;
 		this.edistaa = edistaa;
+		this.ammatti = ammatti;
 		
 		
 	}
 	
-	public Candidates(int ehdokas_id, String sukunimi, String etunimi, String puolue, String koti, int ika, String ammatti, String ehdolle, String edistaa)
+	public Candidates(int ehdokas_id, String sukunimi, String etunimi, String puolue, String koti, int ika, String ehdolle, String edistaa, String ammatti)
 	{
 		setEhdokas_id(ehdokas_id);
 		this.sukunimi = sukunimi;
@@ -42,13 +42,13 @@ public class Candidates implements Serializable{
 		this.puolue = puolue;
 		this.kotikunta = koti;
 		setIka(ika);
-		this.ammatti = ammatti;
 		this.ehdolle = ehdolle;
 		this.edistaa = edistaa;
+		this.ammatti = ammatti;
 		
 	}
 	
-	public Candidates(String ehdokas_id, String sukunimi, String etunimi, String puolue, String koti, String ika,  String ammatti, String ehdolle, String edistaa)
+	public Candidates(String ehdokas_id, String sukunimi, String etunimi, String puolue, String koti, String ika, String ehdolle, String edistaa, String ammatti)
 	{
 		setEhdokas_id(ehdokas_id);
 		this.sukunimi = sukunimi;
@@ -56,23 +56,23 @@ public class Candidates implements Serializable{
 		this.puolue = puolue;
 		this.kotikunta = koti;
 		setIka(ika);
-		this.ammatti = ammatti;
 		this.ehdolle = ehdolle;
 		this.edistaa = edistaa;
+		this.ammatti = ammatti;
 		
 	}
 	
 	
-	public Candidates(String sukunimi, String etunimi, String puolue, String koti, String ika, String ammatti, String ehdolle, String edistaa)
+	public Candidates(String sukunimi, String etunimi, String puolue, String koti, String ika, String ehdolle, String edistaa, String ammatti)
 	{
 		this.sukunimi = sukunimi;
 		this.etunimi = etunimi;
 		this.puolue = puolue;
 		this.kotikunta = koti;
 		setIka(ika);
-		this.ammatti = ammatti;
 		this.ehdolle = ehdolle;
 		this.edistaa = edistaa;
+		this.ammatti = ammatti;
 		
 	}
 	
@@ -133,12 +133,6 @@ public class Candidates implements Serializable{
 
 		}
 	}
-	public String getAmmatti() {
-		return ammatti;
-	}
-	public void setAmmatti(String ammatti) {
-		this.ammatti = ammatti;
-	}
 	public String getEhdolle() {
 		return ehdolle;
 	}
@@ -150,6 +144,12 @@ public class Candidates implements Serializable{
 	}
 	public void setEdistaa(String edistaa) {
 		this.edistaa = edistaa;
+	}
+	public String getAmmatti() {
+		return ammatti;
+	}
+	public void setAmmatti(String ammatti) {
+		this.ammatti = ammatti;
 	}
 	public String toString() {
 		return ehdokas_id+" "+sukunimi+" "+etunimi+" "+puolue+" "+kotikunta+" "+ika+" "+ehdolle+" "+edistaa+" "+ammatti;

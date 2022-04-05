@@ -56,8 +56,8 @@ public class Dao {
 			//count=stmt.executeUpdate("insert into ehdokkaat(ehdokas_id, etunimi, sukunimi, puolue, ikä, kotipaikkakunta, miksi_eduskuntaan, mita_asioita_haluat_edistaa, ammatti) "
 			// + "values('"+candidate.getEhdokas_id()+"', '"+candidate.getEtunimi()+"' '"+candidate.getSukunimi()+"' '"+candidate.getPuolue()+" '"+candidate.getKotikunta()+"'"
 			// + "'"+candidate.getAmmatti()+"''"+candidate.getIka()+"' '"+candidate.getEhdolle()+"' '"+candidate.getEdistaa()+"')");
-			count=stmt.executeUpdate("insert into ehdokkaat(ehdokas_id, sukunimi, etunimi, puolue, kotipaikkakunta, ika, miksi_eduskuntaan, mita_asioita_haluat_edistaa, ammatti) values('"+candidate.getEhdokas_id()+"'"+candidate.getSukunimi()+"'"+candidate.getEtunimi()+"'"+candidate.getPuolue()+"'"+candidate.getKotikunta()+"'"
-			+"'"+candidate.getIka()+"'"+candidate.getEhdolle()+"'"+candidate.getEdistaa()+"'"+candidate.getAmmatti()+"')");
+			count=stmt.executeUpdate("insert into ehdokkaat(ehdokas_id, sukunimi, etunimi, puolue, kotipaikkakunta, ika, miksi_eduskuntaan, mita_asioita_haluat_edistaa, ammatti) values('"+candidate.getEhdokas_id()+"'"+candidate.getSukunimi()+"'"+candidate.getEtunimi()+"'"+candidate.getPuolue()+"'"+candidate.getKotikunta()+
+			"'"+candidate.getIka()+"'"+candidate.getEhdolle()+"'"+candidate.getEdistaa()+"'"+candidate.getAmmatti()+"')");
 			//count=stmt.executeUpdate("insert into ehdokkaat(ehdokas_id, sukunimi, etunimi, puolue, kotipaikkakunta, ika, miksi_eduskuntaan, mita_asioita_haluat_edistaa, ammatti) values("+candidate.getEhdokas_id()+candidate.getSukunimi()+candidate.getEtunimi()+candidate.getPuolue()+candidate.getKotikunta()
 			//+candidate.getIka()+candidate.getEhdolle()+candidate.getEdistaa()+candidate.getAmmatti()+")");
 		} catch (SQLException e) {

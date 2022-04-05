@@ -10,20 +10,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lisää ehdokas</title>
+<title>Lisaa ehdokas</title>
 </head>
 <body>
-<h2>Lisää uusi ehdokas</h2>
+<h2>Lisaa uusi ehdokas</h2>
 
 <form>
-<form action='./addcandidate' method='post'>
+<form action='/addcandidate' method='post'>
 Etunimi: <input type='text' name='etunimi' value=''><br>
 Sukunimi: <input type='text' name='sukunimi' value=''><br>
 Puolue: <input type='text' name='puolue' value=''><br>
 Kotikunta: <input type='text' name='kotikunta' value=''><br>
-Ikä: <input type='text' name='ika' value=''><br>
+Ika: <input type='text' name='ika' value=''><br>
 Miksi haluat ehdolle?: <input type='text' name='ehdolle' value=''><br>
-Mitä haluat edistää?: <input type='text' name='edistaa' value=''><br>
+Mita haluat edistaa?: <input type='text' name='edistaa' value=''><br>
 Ammatti: <input type='text' name='ammatti' value=''><br>
 <input type='submit' name='ok' value='Tallenna'>
 </form>

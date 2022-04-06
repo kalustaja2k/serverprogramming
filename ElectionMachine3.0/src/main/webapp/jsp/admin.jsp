@@ -29,7 +29,10 @@
 	<th>Ammatti</th>
 </tr>
 
-	<a href="/addcandidate"> <!-- redirect to add candidate here -->
+	
+		<div class="showcandidates">
+		
+		<a href="/addcandidate"> <!-- redirect to add candidate here -->
 			<input class="button" type="submit" value="Lisää ehdokas" />
 		</a>
 <c:forEach var="candidate" items="${sessionScope.allcandidates}">
@@ -68,7 +71,9 @@ ${candidate.ammatti}<br>
 
 
 
+
 </c:forEach>
+</div>
 </table>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>

@@ -12,69 +12,25 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ehdokkaat</title>
+<title>Ylläpito</title>
+<link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
 
-<table>
-<tr>
-	<th>Ehdokas Id</th>
-	<th>Etunimi</th>
-	<th>Sukunimi</th>
-	<th>Puolue</th>
-	<th>Kotikunta</th>
-	<th>Ikä</th>
-	<th>Miksi lähdit ehdolle eduskuntaan?</th>
-	<th>Mitä asioita haluat edistää?</th>
-	<th>Ammatti</th>
-</tr>
+<h2>Ylläpito</h2>	
 
-	
-		<div class="showcandidates">
-		
-		<a href="/addcandidate"> <!-- redirect to add candidate here -->
-			<input class="button" type="submit" value="Lisää ehdokas" />
+<div>
+		<a href="jsp/showcandidatesadmin.jsp"> 
+			<input class="button" type="submit" value="Muokkaa ehdokkaita" />
 		</a>
-<c:forEach var="candidate" items="${sessionScope.allcandidates}">
+	</div>
 
+<div>
+		<a href="jsp/showquestionsadmin.jsp"> 
+			<input class="button" type="submit" value="Muokkaa kysymyksiä" />
+		</a>
+	</div>
 
-<h2><b>${candidate.ehdokas_id}:</b> ${candidate.etunimi} ${candidate.sukunimi} </h2>
-
-<b>Puolue: </b><br>
-
-${candidate.puolue} <br>
-
-<b>Kotipaikkakunta:</b><br>
-
-${candidate.kotikunta}<br>
-
-<b>Ikä: </b><br>
-
-${candidate.ika}<br>
-
-<b>Miksi haluat eduskuntaan?</b><br>
-
-${candidate.ehdolle}<br>
-
-<b>Mitä asioita haluat edistää?</b><br>
-
-${candidate.edistaa}<br>
-
-<b>Ammatti:</b><br>
-
-${candidate.ammatti}<br>
-
-<a href="/editcandidates?ehdokas_id=${candidate.ehdokas_id }">Edit</a>
-<a href="/deletecandidates?ehdokas_id=${candidate.ehdokas_id }">Delete</a>
-
-<br> <br>
-
-
-
-
-</c:forEach>
-</div>
-</table>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

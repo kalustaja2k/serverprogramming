@@ -14,7 +14,11 @@
 <title>Vastaa kysymyksiin</title> 
 </head>
 <body>
-<div style=margin-left:10px;>
+<div class="showcandidates">
+		
+		<a href="/addquestion"> <!-- redirect to add candidate here -->
+			<input class="button" type="submit" value="Lisää kysymys" />
+		</a>
 <form method="post" action="showquestion">
 <c:forEach var="question" items="${sessionScope.allquestions}">
 
@@ -39,6 +43,7 @@ value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 <a href="/deletequestion?kysymys_id=${question.kysymys_id }">Delete</a>
 
 </c:forEach> 
+</div>
 </form>
 </div>
 </body>

@@ -14,7 +14,7 @@
 <title>Vastaa kysymyksiin</title> 
 </head>
 <body>
-<div class="showcandidates">
+<div style=margin-left:10px;>
 		
 		<a href="/addquestion"> <!-- redirect to add candidate here -->
 			<input class="button" type="submit" value="Lisää kysymys" />
@@ -45,7 +45,6 @@ value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 </c:forEach> 
 
 </form>
-</div>
 </div>
 </body>
 </html>

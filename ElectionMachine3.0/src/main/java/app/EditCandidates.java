@@ -47,7 +47,7 @@ public class EditCandidates extends HttpServlet {
 			}
 		} else {
 			// Back to list
-			response.sendRedirect("/showcandidates.jsp");
+			response.sendRedirect("jsp/editcandidates.jsp");
 			
 		}
 	
@@ -64,7 +64,7 @@ public class EditCandidates extends HttpServlet {
 		
 		dao.close();
 
-		response.sendRedirect("/showcandidates.jsp");  // redirect to candidates list
+		response.sendRedirect("jsp/showcandidatesadmin.jsp");  // redirect to candidates list
 	}
 	
 

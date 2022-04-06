@@ -45,7 +45,7 @@ public class EditQuestion extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else {
-			response.sendRedirect("/showquestions.jsp");
+			response.sendRedirect("jsp/editquestions.jsp");
 			
 		}
 	
@@ -62,7 +62,7 @@ public class EditQuestion extends HttpServlet {
 		
 		dao.close();
 
-		response.sendRedirect("/showquestions.jsp"); 
+		response.sendRedirect("jsp/showquestionsadmin.jsp"); 
 	}
 	
 

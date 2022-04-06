@@ -58,7 +58,7 @@ public class EditQuestion extends HttpServlet {
 		Dao dao=new Dao();
 		Questions question = readQuestions(request);
 		
-		dao.updateQuestions(question);
+		dao.updateQuestion(question);
 		
 		dao.close();
 
@@ -66,8 +66,8 @@ public class EditQuestion extends HttpServlet {
 	}
 	
 
-	private Question readQuestions(HttpServletRequest request) {
-		Question questions =new Question();
+	private Questions readQuestions(HttpServletRequest request) {
+		Questions questions =new Questions();
 		questions.setKysymys_id(Integer.parseInt(request.getParameter("Kysymys_id")));
 		questions.setKysymys(request.getParameter("Kysymys"));
 		return questions;

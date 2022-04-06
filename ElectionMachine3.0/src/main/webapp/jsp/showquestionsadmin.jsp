@@ -39,7 +39,6 @@ value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 <a href="/deletequestion?kysymys_id=${question.kysymys_id }">Delete</a>
 
 </c:forEach> 
- <input type="submit" value="Vastaa">
 </form>
 </div>
 </body>

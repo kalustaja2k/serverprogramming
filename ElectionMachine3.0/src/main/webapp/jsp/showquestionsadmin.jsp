@@ -35,8 +35,8 @@ value="4"><label for="${question.kysymys}4"> 4. Jokseenkin samaa mielä</label><b
 <input type="radio"  name="${question.kysymys}"
 value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 
-<a href="/editquestions?kysymys_id=${question.kysymys_id }">Edit</a>
-<a href="/deletequestions?kysymys_id=${question.kysymys_id }">Delete</a>
+<a href="/editquestion?kysymys_id=${question.kysymys_id }">Edit</a>
+<a href="/deletequestion?kysymys_id=${question.kysymys_id }">Delete</a>
 
 </c:forEach> 
  <input type="submit" value="Vastaa">

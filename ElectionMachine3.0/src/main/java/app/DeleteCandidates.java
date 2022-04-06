@@ -76,6 +76,6 @@ public class DeleteCandidates extends HttpServlet {
 		// Back to list after actions
 		//RequestDispatcher rd = request.getRequestDispatcher("/");
 		//rd.forward(request, response);
-		response.sendRedirect("jsp/admin.jsp");
+		response.sendRedirect("jsp/showcandidatesadmin.jsp");
 	}
 }

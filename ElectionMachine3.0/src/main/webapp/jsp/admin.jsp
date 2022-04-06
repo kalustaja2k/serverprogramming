@@ -12,12 +12,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ylläpito</title>
+<title>YllÃ¤pito</title>
 <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
 
-<h2>Ylläpito</h2>	
+<h2>YllÃ¤pito</h2>	
 
 <div>
 		<a href="showcandidatesadmin.jsp"> 
@@ -27,7 +27,7 @@
 
 <div>
 		<a href="showquestionsadmin.jsp"> 
-			<input class="button" type="submit" value="Muokkaa kysymyksiä" />
+			<input class="button" type="submit" value="Muokkaa kysymyksiÃ¤" />
 		</a>
 	</div>
 

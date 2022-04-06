@@ -65,24 +65,7 @@ public class Dao {
 		}
 		return count;
 	}
-	public ArrayList<Questions> readAllQuestions() {
-		ArrayList<Questions> list=new ArrayList<>();
-		Statement stmt=null;
-		try {
-			stmt = conn.createStatement();
-			ResultSet rs=stmt.executeQuery("select * from kysymykset");
-			while (rs.next()) {
-				Questions question=new Questions();
-				question.setKysymys_id(rs.getInt("Kysymys_id"));
-				question.setKysymys(rs.getString("Kysymys"));
-				list.add(question);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return list;
-		}
+	
 	
 	public ArrayList<Candidates> readAllCandidates() {
 		ArrayList<Candidates> list=new ArrayList<>();
@@ -181,6 +164,91 @@ public class Dao {
 		return result;
 	}
 	
+	public int saveQuestion(Questions question) {
+		Statement stmt=null;
+		int count=0;
+		try {
+			stmt = conn.createStatement();
+			count=stmt.executeUpdate("insert into kysymykset(kysymys_id, kysymys) values('"+question.getKysymys_id()+"'"+question.getKysymys()+"');");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
+	public ArrayList<Questions> readAllQuestions() {
+		ArrayList<Questions> list=new ArrayList<>();
+		Statement stmt=null;
+		try {
+			stmt = conn.createStatement();
+			ResultSet rs=stmt.executeQuery("select * from kysymykset");
+			while (rs.next()) {
+				Questions question=new Questions();
+				question.setKysymys_id(rs.getInt("Kysymys_id"));
+				question.setKysymys(rs.getString("Kysymys"));
+				list.add(question);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+		}
+	
+	public int updateQuestion(Questions question) {
+		int count = 0;
+		String sql = "update kysymykset set kysymys = ? where kysymys_id = ?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setInt(1, question.getKysymys_id());
+			stmt.setString(2, question.getKysymys());
+			
+			count = stmt.executeUpdate();
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
+public int deleteQuestion(int Kysymys_id) throws SQLException {
+		
+		int count = 0;
+		String sql = "DELETE from kysymykset WHERE kysymys_id=?";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			
+			stmt.setInt(1, Kysymys_id);
+			
+			count = stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+
+public Questions getQuestionInfo(int kysymys_id) {
+	Questions result = null;
+	String sql = "select * from kysymykset where kysymys_id = ?";
+	try {
+		PreparedStatement stmt = conn.prepareStatement(sql);
+					
+		stmt.setInt(1, kysymys_id);
+		
+		ResultSet resultset = stmt.executeQuery();
+		
+		if (resultset.next()) {
+			result = new Questions();
+			result.setKysymys_id(resultset.getInt("Kysymys_id"));
+			result.setKysymys(resultset.getString("Kysymys"));
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return result;
+}
 	 public User checkLogin(String email, String password) throws SQLException,
      ClassNotFoundException {
  String sql = "SELECT * FROM kirjautuminen WHERE nimi = ? and salasana = ?";

@@ -60,10 +60,10 @@ public class AddCandidate extends HttpServlet {
 		candidate.setSukunimi(request.getParameter("sukunimi"));
 		candidate.setEtunimi(request.getParameter("etunimi"));
 		candidate.setPuolue(request.getParameter("puolue"));
-		candidate.setKotikunta(request.getParameter("kotikunta"));
+		candidate.setKotikunta(request.getParameter("kotipaikkakunta"));
 		candidate.setIka(request.getParameter("ika"));
-		candidate.setEhdolle(request.getParameter("ehdolle"));
-		candidate.setEdistaa(request.getParameter("edistaa"));
+		candidate.setEhdolle(request.getParameter("miksi_eduskuntaan"));
+		candidate.setEdistaa(request.getParameter("mita_asioita_haluat_edistaa"));
 		candidate.setAmmatti(request.getParameter("ammatti"));
 		return candidate;
 	}

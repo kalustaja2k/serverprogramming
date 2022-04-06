@@ -28,6 +28,7 @@ public class DeleteQuestion extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
+		
 		String idValue = request.getParameter("Kysymys_id");
 		
 		if ( idValue != null ) {

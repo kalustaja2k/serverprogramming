@@ -19,6 +19,7 @@ import app.Questions;
 		urlPatterns = { "/addquestion" }
 		)
 public class AddQuestion extends HttpServlet {
+	
 
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 

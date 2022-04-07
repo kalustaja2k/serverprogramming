@@ -19,13 +19,13 @@
 
 <h2>Ylläpito</h2>	
 
-<div>
+<div class="link">
 		<a href="showcandidatesadmin.jsp"> 
 			<input class="button" type="submit" value="Muokkaa ehdokkaita" />
 		</a>
 	</div>
 
-<div>
+<div class="link">
 		<a href="showquestionsadmin.jsp"> 
 			<input class="button" type="submit" value="Muokkaa kysymyksiä" />
 		</a>

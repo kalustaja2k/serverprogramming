@@ -13,6 +13,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Muokkaa kysymyksia</title>
+ <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
 <h2>Muokkaa kysymyksia</h2>

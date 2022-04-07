@@ -12,11 +12,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Vastaa kysymyksiin</title> 
+ <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
-<div style=margin-left:10px;>
+<div style=text-align:center;>
 		
-		<a href="/addquestion"> <!-- redirect to add candidate here -->
+		<a href="/addquestion">
 			<input class="button" type="submit" value="Lisää kysymys" />
 		</a>
 <form method="post" action="showquestion">
@@ -39,8 +40,8 @@ value="4"><label for="${question.kysymys}4"> 4. Jokseenkin samaa mielä</label><b
 <input type="radio"  name="${question.kysymys}"
 value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 
-<a href="/editquestion?kysymys_id=${question.kysymys_id }">Edit</a>
-<a href="/deletequestion?kysymys_id=${question.kysymys_id }">Delete</a>
+<a href="/editquestion?kysymys_id=${question.kysymys_id }">Muokkaa</a>
+<a href="/deletequestion?kysymys_id=${question.kysymys_id }">Poista</a>
 
 </c:forEach> 
 

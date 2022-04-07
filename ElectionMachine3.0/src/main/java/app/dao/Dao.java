@@ -163,7 +163,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into kysymykset(kysymys_id, kysymys) values('"+question.getKysymys_id()+"'"+question.getKysymys()+"');");
+			count=stmt.executeUpdate("insert into kysymykset(kysymys_id, kysymys) values('"+question.getKysymys_id()+"','"+question.getKysymys()+"')");
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -179,8 +179,8 @@ public class Dao {
 			ResultSet rs=stmt.executeQuery("select * from kysymykset");
 			while (rs.next()) {
 				Questions question=new Questions();
-				question.setKysymys_id(rs.getInt("Kysymys_id"));
-				question.setKysymys(rs.getString("Kysymys"));
+				question.setKysymys_id(rs.getInt("kysymys_id"));
+				question.setKysymys(rs.getString("kysymys"));
 				list.add(question);
 			}
 		} catch (SQLException e) {
@@ -235,8 +235,8 @@ public Questions getQuestionInfo(int kysymys_id) {
 		
 		if (resultset.next()) {
 			result = new Questions();
-			result.setKysymys_id(resultset.getInt("Kysymys_id"));
-			result.setKysymys(resultset.getString("Kysymys"));
+			result.setKysymys_id(resultset.getInt("kysymys_id"));
+			result.setKysymys(resultset.getString("kysymys"));
 		}
 	} catch (SQLException e) {
 		e.printStackTrace();

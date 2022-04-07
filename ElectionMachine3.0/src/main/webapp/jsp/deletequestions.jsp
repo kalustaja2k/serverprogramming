@@ -16,10 +16,11 @@
 <body>
 <h2>Haluatko varmasti poistaa kysymyksen?</h2>
 
-	<form action='/deletequestions' method='post'>
-		<input type="hidden" name="id" value="${sessionScope.question.kysymys_id }">		
+	<form action='./deletequestion' method='post'>
+		<input type="hidden" name="kysymys_id" value="${sessionScope.question.kysymys_id }">		
 		<input type='submit' name='ok' value='Poista'>
 	</form>
+	<a href='jsp/showquestionsadmin.jsp' class="loginbutton">Takaisin</a>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

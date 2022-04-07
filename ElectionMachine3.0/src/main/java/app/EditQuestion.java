@@ -25,29 +25,10 @@ public class EditQuestion extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
-		HttpSession session = request.getSession();
-		
-		String idValue = request.getParameter("Kysymys_id");
-		
-		if ( idValue != null ) {
-			try {
-				int id = Integer.parseInt(idValue);
-			
-				Dao dao = new Dao();
-				Questions question = dao.getQuestionInfo(id);
-				
-				session.setAttribute("question", question);
-				
-				RequestDispatcher rd = request.getRequestDispatcher("jsp/editquestions.jsp");
-				rd.forward(request, response);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
-			response.sendRedirect("jsp/editquestions.jsp");
-			
-		}
+		// Create connection
+		System.out.println("moi2");
+		RequestDispatcher rd = request.getRequestDispatcher("jsp/editquestions.jsp");
+		rd.forward(request, response);
 	
 	}
 	
@@ -55,22 +36,49 @@ public class EditQuestion extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
-		Dao dao=new Dao();
-		Questions question = readQuestions(request);
 		
-		dao.updateQuestion(question);
-		
-		dao.close();
-
-		response.sendRedirect("jsp/showquestionsadmin.jsp"); 
+		//Create session
+				HttpSession session = request.getSession();
+				
+				String idValue = request.getParameter("kysymys_id");
+				
+				if ( idValue != null ) {
+					System.out.println("hei");
+					try {
+						int id = Integer.parseInt(idValue);
+					
+						Dao dao = new Dao();
+						Questions question = dao.getQuestionInfo(id);
+						
+						session.setAttribute("question", question);
+						
+						RequestDispatcher rd = request.getRequestDispatcher("jsp/editquestion.jsp");
+						rd.forward(request, response);
+						
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				} else {
+					// Back to list
+					System.out.println("moi");
+					response.sendRedirect("jsp/editquestion.jsp");
+					
+				}
+				Dao dao=new Dao();
+				Questions questions = readQuestions(request);
+				
+				dao.updateQuestion(questions);
+				
+				dao.close();
+				System.out.println("terve");
+				response.sendRedirect("jsp/showquestionsadmin.jsp");  // redirect to candidates list
 	}
 	
 
 	private Questions readQuestions(HttpServletRequest request) {
 		Questions questions =new Questions();
-		questions.setKysymys_id(Integer.parseInt(request.getParameter("Kysymys_id")));
-		questions.setKysymys(request.getParameter("Kysymys"));
+		questions.setKysymys_id(Integer.parseInt(request.getParameter("kysymys_id")));
+		questions.setKysymys(request.getParameter("kysymys"));
 		return questions;
 	}
 }
-

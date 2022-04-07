@@ -42,10 +42,13 @@ value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 
 <a href="/editquestion?kysymys_id=${question.kysymys_id }">Muokkaa</a>
 <a href="/deletequestion?kysymys_id=${question.kysymys_id }">Poista</a>
-
+<br> <br>
 </c:forEach> 
-
+<br> <br>
 </form>
 </div>
+<footer>
+ <p>Team 9 - Ville Lahtinen & Silja Markku </p>
+ </footer>
 </body>
 </html>

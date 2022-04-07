@@ -29,9 +29,13 @@ public class Questions implements Serializable {
 			this.Kysymys_id = Integer.parseInt(Kysymys_id);
 		}
 		catch(NumberFormatException | NullPointerException e) {
-
+			
 		}
 	}
+	public String toString() {
+		return Kysymys_id+" "+kysymys;
+	}
+	
 	public Questions() {
 		
 	}
@@ -42,6 +46,10 @@ public class Questions implements Serializable {
 	}
 	public Questions(String kysymys) {
 		this.kysymys = kysymys;
+	}
+	public Questions(String kysymys_id, String kysymys) {
+		this.kysymys=kysymys_id;
+		this.kysymys=kysymys;
 	}
 	
 }

@@ -25,60 +25,69 @@ public class EditCandidates extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		
-		//Create session
-		HttpSession session = request.getSession();
-		
-		String idValue = request.getParameter("Ehdokas_id");
-		
-		if ( idValue != null ) {
-			try {
-				int id = Integer.parseInt(idValue);
-			
-				Dao dao = new Dao();
-				Candidates candidates = dao.getCandidateInfo(id);
-				
-				session.setAttribute("candidate", candidates);
-				
-				RequestDispatcher rd = request.getRequestDispatcher("jsp/editcandidates.jsp");
-				rd.forward(request, response);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else {
-			// Back to list
-			response.sendRedirect("jsp/editcandidates.jsp");
-			
-		}
+		// Create connection
+		System.out.println("moi2");
+		RequestDispatcher rd = request.getRequestDispatcher("jsp/editcandidates.jsp");
+		rd.forward(request, response);
 	
 	}
 	
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		// Create connection
-		Dao dao=new Dao();
-		Candidates candidate = readCandidates(request);
 		
-		dao.updateCandidate(candidate);
 		
-		dao.close();
-
-		response.sendRedirect("jsp/showcandidatesadmin.jsp");  // redirect to candidates list
+		//Create session
+				HttpSession session = request.getSession();
+				
+				String idValue = request.getParameter("ehdokas_id");
+				
+				if ( idValue != null ) {
+					System.out.println("hei");
+					try {
+						int id = Integer.parseInt(idValue);
+					
+						Dao dao = new Dao();
+						Candidates candidates = dao.getCandidateInfo(id);
+						
+						session.setAttribute("candidate", candidates);
+						
+						RequestDispatcher rd = request.getRequestDispatcher("jsp/editcandidates.jsp");
+						rd.forward(request, response);
+						
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				} else {
+					// Back to list
+					System.out.println("moi");
+					response.sendRedirect("jsp/editcandidates.jsp");
+					
+				}
+				Dao dao=new Dao();
+				Candidates candidates = readCandidates(request);
+				
+				dao.updateCandidate(candidates);
+				
+				dao.close();
+				System.out.println("terve");
+				response.sendRedirect("jsp/showcandidatesadmin.jsp");  // redirect to candidates list
 	}
 	
 
 	private Candidates readCandidates(HttpServletRequest request) {
 		Candidates candidates=new Candidates();
-		candidates.setEhdokas_id(Integer.parseInt(request.getParameter("Ehdokas_id")));
-		candidates.setEtunimi(request.getParameter("Etunimi"));
-		candidates.setSukunimi(request.getParameter("Sukunimi"));
-		candidates.setPuolue(request.getParameter("Puolue"));
-		candidates.setKotikunta(request.getParameter("Kotipaikkakunta"));
-		candidates.setIka(Integer.parseInt(request.getParameter("Ika")));
-		candidates.setEhdolle(request.getParameter("Miksi_eduskuntaan"));
-		candidates.setEdistaa(request.getParameter("Mita_asioita_haluat_edistaa"));
-		candidates.setAmmatti(request.getParameter("Ammatti"));
+		candidates.setEhdokas_id(Integer.parseInt(request.getParameter("ehdokas_id")));
+		//candidates.setEhdokas_id(request.getParameter("ehdokas_id"));
+		candidates.setEtunimi(request.getParameter("etunimi"));
+		candidates.setSukunimi(request.getParameter("sukunimi"));
+		candidates.setPuolue(request.getParameter("puolue"));
+		candidates.setKotikunta(request.getParameter("kotipaikkakunta"));
+		//candidates.setIka(request.getParameter("ika"));
+		candidates.setIka(Integer.parseInt(request.getParameter("ika")));
+		candidates.setEhdolle(request.getParameter("miksi_eduskuntaan"));
+		candidates.setEdistaa(request.getParameter("mita_asioita_haluat_edistaa"));
+		candidates.setAmmatti(request.getParameter("ammatti"));
 		
 		return candidates;
 	}

@@ -22,12 +22,7 @@ public class AddCandidate extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-
-		doGet(request, response);
-	}
-	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+System.out.println("hei");
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
@@ -48,6 +43,15 @@ public class AddCandidate extends HttpServlet {
 				//printCandidatesList(out, list);
 				dao.close();
 		
+				RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
+				rd.forward(request, response);
+				//out.println("<br><a href='./form.html'>Back to form</a>");
+	}
+	@Override
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		System.out.println("moi");
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
 				rd.forward(request, response);
 				//out.println("<br><a href='./form.html'>Back to form</a>");

@@ -45,7 +45,7 @@ System.out.println("hei");
 		
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
 				rd.forward(request, response);
-				out.println("<br><a href='./showcandidatesadmin.jsp'>Takaisin</a>");
+				//out.println("<br><a href='./showcandidatesadmin.jsp'>Takaisin</a>");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)

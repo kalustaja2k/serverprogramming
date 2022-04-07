@@ -27,11 +27,11 @@ public class DeleteCandidates extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-
+		System.out.println("hei");
 		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 
-		String idValue = request.getParameter("Ehdokas_id");
+		String idValue = request.getParameter("ehdokas_id");
 
 		if (idValue != null ) {
 			try {
@@ -51,17 +51,20 @@ public class DeleteCandidates extends HttpServlet {
 		} else {
 			// Back to list
 			response.sendRedirect("jsp/deletecandidates.jsp");
-
+			System.out.println("hei2");
 		}
 	}
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
+		System.out.println("moi");
 		// Create connection
 		Dao dao=new Dao();
 
 		try {
-			dao.deleteCandidate(Integer.parseInt(request.getParameter("Ehdokas_id")));
+			System.out.println("letsgobutearly");
+			dao.deleteCandidate(Integer.parseInt(request.getParameter("ehdokas_id")));
+			System.out.println("letsgo");
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

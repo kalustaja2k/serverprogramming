@@ -91,7 +91,7 @@ public class Candidates implements Serializable{
 			this.ehdokas_id = Integer.parseInt(ehdokas_id);
 		}
 		catch(NumberFormatException | NullPointerException e) {
-
+			
 		}
 	}
 	public String getSukunimi() {

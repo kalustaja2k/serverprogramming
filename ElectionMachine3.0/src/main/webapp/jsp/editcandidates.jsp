@@ -17,18 +17,18 @@
 <body>
 <h2>Muokkaa ehdokkaiden tietoja</h2>
   
-<form action='/editcandidates' method='post'>
-		Etunimi: <input type='text' name='breed' value='${sessionScope.candidate.etunimi }'><br>
-		Sukunimi: <input type='text' name='weight' value='${sessionScope.candidate.sukunimi }'><br>
-		Puolue: <input type='text' name='breed' value='${sessionScope.candidate.puolue }'><br>
-		Kotikunta: <input type='text' name='breed' value='${sessionScope.candidate.kotikunta }'><br>
-		Ikä: <input type='text' name='breed' value='${sessionScope.candidate.ika }'><br>
-		Miksi ehdolle: <input type='text' name='breed' value='${sessionScope.candidate.ehdolle}'><br>
-		Mitä haluat edistää: <input type='text' name='breed' value='${sessionScope.candidate.edistaa }'><br>
-		Ammatti: <input type='text' name='breed' value='${sessionScope.candidate.ammatti }'><br>
+<form action='./editcandidates' method='post'>
+		Etunimi: <input type='text' name='etunimi' value='${sessionScope.candidate.etunimi }'><br>
+		Sukunimi: <input type='text' name='sukunimi' value='${sessionScope.candidate.sukunimi }'><br>
+		Puolue: <input type='text' name='puolue' value='${sessionScope.candidate.puolue }'><br>
+		Kotipaikkakunta: <input type='text' name='kotipaikkakunta' value='${sessionScope.candidate.kotikunta }'><br>
+		Ikä: <input type='text' name='ika' value='${sessionScope.candidate.ika }'><br>
+		Miksi ehdolle: <input type='text' name='miksi_eduskuntaan' value='${sessionScope.candidate.ehdolle}'><br>
+		Mitä haluat edistää: <input type='text' name='mita_asioita_haluat_edistaa' value='${sessionScope.candidate.edistaa }'><br>
+		Ammatti: <input type='text' name='ammatti' value='${sessionScope.candidate.ammatti }'><br>
 
 		
-		<input type="hidden" name="id" value="${sessionScope.candidate.ehdokas_id }">
+		<input type="hidden" name="ehdokas_id" value="${sessionScope.candidate.ehdokas_id }">
 				
 		<input type='submit' name='ok' value='Muokkaa'>
 	</form>

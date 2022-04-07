@@ -11,6 +11,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lisaa ehdokas</title>
+ <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
 <h2>Lisaa uusi ehdokas</h2>

@@ -11,6 +11,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lisaa kysymys</title>
+<link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
 <h2>Lisaa uusi kysymys</h2>

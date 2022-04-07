@@ -6,13 +6,13 @@
 <%@ include file="../header.html" %>  
  <%@ page import="app.dao.Dao" %> 
  
-
-    
+     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Muokkaa ehdokkaita</title>
+ <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
 <h2>Muokkaa ehdokkaiden tietoja</h2>

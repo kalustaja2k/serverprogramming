@@ -13,22 +13,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Ehdokkaat</title>
+ <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
-
-<table>
-<tr>
-	<th>Ehdokas Id</th>
-	<th>Etunimi</th>
-	<th>Sukunimi</th>
-	<th>Puolue</th>
-	<th>Kotikunta</th>
-	<th>Ikä</th>
-	<th>Miksi lähdit ehdolle eduskuntaan?</th>
-	<th>Mitä asioita haluat edistää?</th>
-	<th>Ammatti</th>
-</tr>
-
 	
 		<div class="showcandidates">
 		
@@ -64,8 +51,8 @@ ${candidate.edistaa}<br>
 
 ${candidate.ammatti}<br>
 
-<a href="/editcandidates?ehdokas_id=${candidate.ehdokas_id}">Edit</a>
-<a href="/deletecandidates?ehdokas_id=${candidate.ehdokas_id }">Delete</a>
+<a href="/editcandidates?ehdokas_id=${candidate.ehdokas_id}">Muokkaa</a>
+<a href="/deletecandidates?ehdokas_id=${candidate.ehdokas_id }">Poista</a>
 
 <br> <br>
 

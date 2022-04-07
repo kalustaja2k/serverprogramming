@@ -46,8 +46,8 @@ public class ShowQuestion extends HttpServlet {
 
 private Questions readQuestion(HttpServletRequest request) {
 	Questions question=new Questions();
-	question.setKysymys_id(Integer.parseInt(request.getParameter("Kysymys_id")));
-	question.setKysymys(request.getParameter("Kysymys"));
+	question.setKysymys_id(Integer.parseInt(request.getParameter("kysymys_id")));
+	question.setKysymys(request.getParameter("kysymys"));
 
 	return question;
 }

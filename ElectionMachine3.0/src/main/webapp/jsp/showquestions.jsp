@@ -37,8 +37,14 @@ value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
 
 
 </c:forEach> 
- <input type="submit" value="Vastaa">
+<br>
+<input type="submit" value="Vastaa">
+<br> <br>
+ <br> <br>
 </form>
 </div>
+<footer>
+ <p>Team 9 - Ville Lahtinen & Silja Markku </p>
+ </footer>
 </body>
 </html>

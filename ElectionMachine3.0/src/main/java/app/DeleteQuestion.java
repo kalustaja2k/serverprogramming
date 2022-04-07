@@ -31,7 +31,7 @@ public class DeleteQuestion extends HttpServlet {
 		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 
-		String idValue = request.getParameter("Kysymys_id");
+		String idValue = request.getParameter("kysymys_id");
 
 		if (idValue != null ) {
 			try {
@@ -61,7 +61,7 @@ public class DeleteQuestion extends HttpServlet {
 		Dao dao=new Dao();
 
 		try {
-			dao.deleteQuestion(Integer.parseInt(request.getParameter("Kysymys_id")));
+			dao.deleteQuestion(Integer.parseInt(request.getParameter("kysymys_id")));
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -56,12 +56,9 @@ ${candidate.ammatti}<br>
 
 <br> <br>
 
-
-
-
 </c:forEach>
+<br> <br>
 </div>
-</table>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

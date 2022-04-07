@@ -18,11 +18,11 @@
 <body>
 <h2>Muokkaa kysymyksia</h2>
   
-<form action='/editquestion' method='post'>
+<form action='./editquestion' method='post'>
 		Kysymys: <input type='text' name='kysymys' value='${sessionScope.question.kysymys }'><br>
 
 		
-		<input type="hidden" name="id" value="${sessionScope.question.kysymys_id }">
+		<input type="hidden" name="kysymys_id" value="${sessionScope.question.kysymys_id }">
 				
 		<input type='submit' name='ok' value='Muokkaa'>
 	</form>

@@ -5,8 +5,9 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Base64;
 
+//this is for login which is not finished yet
 public class SecurityUtils {
-	
+				
 	public static String getPasswordHashed(String password, String salt) {
 		String result="";
 		

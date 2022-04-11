@@ -27,9 +27,7 @@ public class AddQuestion extends HttpServlet {
 
 		response.setContentType("text/html");
 		
-		
-		
-		// Read parameters to Model
+				// Read parameters to Model
 				Questions question=readQuestions(request);
 			
 				// Create connection
@@ -41,7 +39,7 @@ public class AddQuestion extends HttpServlet {
 				
 				
 				dao.close();
-		
+				//direct to add questions page
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addquestion.jsp");
 				rd.forward(request, response);
 	}

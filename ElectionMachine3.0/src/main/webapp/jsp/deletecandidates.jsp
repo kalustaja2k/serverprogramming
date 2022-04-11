@@ -19,7 +19,7 @@
 		<input type="hidden" name="ehdokas_id" value="${sessionScope.candidate.ehdokas_id }">		
 		<input type='submit' name='ok' value='Poista'>
 	</form>
-<a href='jsp/showcandidatesadmin.jsp' class="loginbutton">Takaisin</a>
+<a href='./showcandidatesadmin' class="loginbutton">Takaisin</a>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

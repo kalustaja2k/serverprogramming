@@ -76,6 +76,6 @@ public class DeleteQuestion extends HttpServlet {
 		// Back to list after actions
 		//RequestDispatcher rd = request.getRequestDispatcher("/");
 		//rd.forward(request, response);
-		response.sendRedirect("jsp/showquestionsadmin.jsp");
+		response.sendRedirect("/showquestionsadmin");
 	}
 }

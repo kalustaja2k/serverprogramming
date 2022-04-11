@@ -8,7 +8,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html> <!-- Login is not finished yet -->
 <head>
 <meta charset="utf-8">
 <title>Vaalikone</title>

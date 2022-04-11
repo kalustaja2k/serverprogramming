@@ -1,6 +1,7 @@
 package app;
 
 import java.io.Serializable;
+//this is for login which is not finished yet
 
 public class User implements Serializable{
 	

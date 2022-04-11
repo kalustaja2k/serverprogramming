@@ -23,8 +23,6 @@ import app.Candidates;
 public class ShowCandidatesAdmin extends HttpServlet {
 	
 
-	//private static final long serialVersionUID = 1L;
-
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
@@ -36,7 +34,8 @@ public class ShowCandidatesAdmin extends HttpServlet {
 		ArrayList<Candidates> candidates = dao.readAllCandidates();
 		
 		session.setAttribute("allcandidates", candidates);
-
+		
+		//direct to show candidates admin page
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/showcandidatesadmin.jsp");
 		rd.forward(request, response);
 	

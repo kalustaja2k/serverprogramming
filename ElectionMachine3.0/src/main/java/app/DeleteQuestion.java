@@ -49,7 +49,7 @@ public class DeleteQuestion extends HttpServlet {
 				e.printStackTrace();
 			}
 		} else {
-			// Back to list
+			// Back to question list
 			response.sendRedirect("jsp/deletequestions.jsp");
 
 		}
@@ -70,9 +70,9 @@ public class DeleteQuestion extends HttpServlet {
 			e.printStackTrace();
 		}
 	
-
+		//close connection
 		dao.close();
-
+		//back to show questions admin page
 		response.sendRedirect("/showquestionsadmin");
 	}
 }

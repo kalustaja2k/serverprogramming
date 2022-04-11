@@ -62,10 +62,10 @@ public class DeleteCandidates extends HttpServlet {
 			dao.deleteCandidate(Integer.parseInt(request.getParameter("ehdokas_id")));
 			
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	

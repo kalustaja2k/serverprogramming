@@ -24,6 +24,7 @@ public class ShowQuestionsAdmin extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 	
+		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 		
 		Dao dao = new Dao();
@@ -31,6 +32,7 @@ public class ShowQuestionsAdmin extends HttpServlet {
 		
 		session.setAttribute("allquestions", questions);
 
+		//direct to show questions admin page
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/showquestionsadmin.jsp");
 		rd.forward(request, response);
 	

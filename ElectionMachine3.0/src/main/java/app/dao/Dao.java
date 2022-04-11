@@ -22,11 +22,9 @@ public class Dao {
 	// When new instance is created, also DB-connection is created
 	public Dao() {
 		try {
-			// com.mysql.cj.jdbc.Driver
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			conn=java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/vaalikone", "pena", "kukkuu");
 		} catch (SQLException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
 		}
@@ -37,7 +35,7 @@ public class Dao {
 		try {
 			conn.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
@@ -81,7 +79,7 @@ public class Dao {
 				list.add(candidate);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return list;
@@ -184,7 +182,7 @@ public class Dao {
 				list.add(question);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return list;

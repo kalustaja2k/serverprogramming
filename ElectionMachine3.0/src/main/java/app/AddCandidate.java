@@ -36,7 +36,7 @@ public class AddCandidate extends HttpServlet {
 				dao.saveCandidate(candidate);
 				ArrayList<Candidates> list=dao.readAllCandidates();
 				
-				dao.close();
+				dao.close(); //close connection
 		
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
 				rd.forward(request, response);
@@ -49,7 +49,6 @@ public class AddCandidate extends HttpServlet {
 	}
 	
 	private Candidates readCandidates(HttpServletRequest request) {
-		// TODO Auto-generated method stub
 		Candidates candidate=new Candidates();
 		candidate.setEhdokas_id(request.getParameter("ehdokas_id"));
 		candidate.setSukunimi(request.getParameter("sukunimi"));

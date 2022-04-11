@@ -42,17 +42,19 @@ public class EditCandidates extends HttpServlet {
 			throws IOException, ServletException {
 		
 		
-		//Create session
+				//Create session
 				HttpSession session = request.getSession();
-				
-			
+						
 				Dao dao=new Dao();
 				Candidates candidates = readCandidates(request);
 				
 				dao.updateCandidate(candidates);
 				
 				dao.close();
-				response.sendRedirect("/showcandidatesadmin");  // redirect to candidates list
+				
+				 // redirect to candidates list
+				response.sendRedirect("/showcandidatesadmin"); 
+
 	}
 	
 

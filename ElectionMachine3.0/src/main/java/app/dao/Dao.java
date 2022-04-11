@@ -19,7 +19,7 @@ public class Dao {
 	private Connection conn;
 
 	
-	// When new instance is created, also DB-connection is created
+	// When new instance is created, database connections is also created
 	public Dao() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -40,6 +40,7 @@ public class Dao {
 		}
 	}
 
+	//method for saving candidates
 	public int saveCandidate(Candidates candidate) {
 		Statement stmt=null;
 		int count=0;
@@ -57,7 +58,7 @@ public class Dao {
 		return count;
 	}
 	
-	
+	//method for reading candidates
 	public ArrayList<Candidates> readAllCandidates() {
 		ArrayList<Candidates> list=new ArrayList<>();
 		Statement stmt=null;
@@ -85,6 +86,7 @@ public class Dao {
 		return list;
 	}
 	
+	//method for updating candidates info
 	public int updateCandidate(Candidates candidate) {
 		int count = 0;
 		String sql = "update ehdokkaat set etunimi = ?, sukunimi = ?, puolue = ?, kotipaikkakunta = ?, ika = ?,"
@@ -111,6 +113,7 @@ public class Dao {
 		return count;
 	}
 	
+	//method for deleting candidates
 	public int deleteCandidate(int Ehdokas_id) throws SQLException {
 		
 		int count = 0;
@@ -127,7 +130,7 @@ public class Dao {
 		return count;
 	}
 
-	
+	//method fot getting candidates info
 	public Candidates getCandidateInfo(int id) {
 		Candidates result = null;
 		String sql = "select * from ehdokkaat where ehdokas_id = ?";
@@ -156,6 +159,7 @@ public class Dao {
 		return result;
 	}
 	
+	//method for saving questions
 	public int saveQuestion(Questions question) {
 		Statement stmt=null;
 		int count=0;
@@ -169,6 +173,7 @@ public class Dao {
 		return count;
 	}
 	
+	//method for reading questions
 	public ArrayList<Questions> readAllQuestions() {
 		ArrayList<Questions> list=new ArrayList<>();
 		Statement stmt=null;
@@ -188,6 +193,7 @@ public class Dao {
 		return list;
 		}
 	
+	//method for updating questions 
 	public int updateQuestion(Questions question) {
 		int count = 0;
 		String sql = "update kysymykset set kysymys = ? where kysymys_id = ?";
@@ -206,6 +212,7 @@ public class Dao {
 		return count;
 	}
 	
+	//method for deleting questions
 public int deleteQuestion(int Kysymys_id) throws SQLException {
 		
 		int count = 0;
@@ -222,6 +229,7 @@ public int deleteQuestion(int Kysymys_id) throws SQLException {
 		return count;
 	}
 
+//method for getting question info
 public Questions getQuestionInfo(int kysymys_id) {
 	Questions result = null;
 	String sql = "select * from kysymykset where kysymys_id = ?";
@@ -243,6 +251,7 @@ public Questions getQuestionInfo(int kysymys_id) {
 	return result;
 }
 
+//method for adding user, this is not finished!
 public void addUser(String username, String pw, String salt) {
 	String sql = "insert into kirjautuminen (email, salasana, nimi) values (?,?,?)";
 	
@@ -261,6 +270,7 @@ public void addUser(String username, String pw, String salt) {
 	}
 	
 }
+//method for checking login credentials, not finished yet!
 	 public User checkLogin(String email, String password) throws SQLException,
      ClassNotFoundException {
  String sql = "SELECT * FROM kirjautuminen WHERE nimi = ? and salasana = ?";

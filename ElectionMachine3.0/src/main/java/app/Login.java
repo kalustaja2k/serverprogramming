@@ -13,7 +13,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 @WebServlet(
-		name = "Login",
+		name = "Login",			//this is not finished yet
 		urlPatterns = {"/login"}
 		)
 public class Login extends HttpServlet {

@@ -42,7 +42,7 @@ public class EditQuestion extends HttpServlet {
 			throws IOException, ServletException {
 		
 		
-		//Create session
+				//Create session
 				HttpSession session = request.getSession();
 				
 			
@@ -52,7 +52,9 @@ public class EditQuestion extends HttpServlet {
 				dao.updateQuestion(questions);
 				
 				dao.close();
-				response.sendRedirect("/showquestionsadmin");  // redirect to questions list
+				
+				// redirect to questions list
+				response.sendRedirect("/showquestionsadmin");  
 	}
 	
 
@@ -63,3 +65,4 @@ public class EditQuestion extends HttpServlet {
 		return questions;
 	}
 }
+

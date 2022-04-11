@@ -23,14 +23,16 @@ public class ShowQuestion extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-	
+		
+		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 		
 		Dao dao = new Dao();
 		ArrayList<Questions> questions = dao.readAllQuestions();
 		
 		session.setAttribute("allquestions", questions);
-
+		
+		//direct to show questions page
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/showquestions.jsp");
 		rd.forward(request, response);
 	

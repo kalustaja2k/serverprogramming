@@ -17,7 +17,7 @@
 <body>
 <h2>Muokkaa ehdokkaiden tietoja</h2>
   
-<form action='./editcandidates' method='post'>
+<form action='./editcandidates' method='post' accept-charset="utf-8">
 		Etunimi: <input type='text' name='etunimi' value='${sessionScope.candidate.etunimi }'><br>
 		Sukunimi: <input type='text' name='sukunimi' value='${sessionScope.candidate.sukunimi }'><br>
 		Puolue: <input type='text' name='puolue' value='${sessionScope.candidate.puolue }'><br>

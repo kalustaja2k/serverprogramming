@@ -33,12 +33,12 @@ public class Login extends HttpServlet {
 	        Dao dao = new Dao();
 	        try {
 	            User user = dao.checkLogin(email, password);
-	            String destPage = "/jsp/login.jsp";
+	            String destPage = "login.jsp";
 	             
 	            if (user != null) {
 	                HttpSession session = request.getSession();
 	                session.setAttribute("user", user);
-	                destPage = "addcandidate.jsp"; //this needs to be changed later
+	                destPage = "admin.jsp"; 
 	            } else {
 	                String message = "Käyttäjätunnus tai salasana väärin";
 	                request.setAttribute("message", message);

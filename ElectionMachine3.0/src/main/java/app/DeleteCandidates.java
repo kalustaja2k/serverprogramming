@@ -27,7 +27,6 @@ public class DeleteCandidates extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		System.out.println("hei");
 		// if sessions does not exist, create new one
 		HttpSession session = request.getSession();
 
@@ -51,20 +50,17 @@ public class DeleteCandidates extends HttpServlet {
 		} else {
 			// Back to list
 			response.sendRedirect("jsp/deletecandidates.jsp");
-			System.out.println("hei2");
 		}
 	}
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
-		System.out.println("moi");
 		// Create connection
 		Dao dao=new Dao();
 
 		try {
-			System.out.println("letsgobutearly");
 			dao.deleteCandidate(Integer.parseInt(request.getParameter("ehdokas_id")));
-			System.out.println("letsgo");
+			
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,8 +73,6 @@ public class DeleteCandidates extends HttpServlet {
 		dao.close();
 
 		// Back to list after actions
-		//RequestDispatcher rd = request.getRequestDispatcher("/");
-		//rd.forward(request, response);
-		response.sendRedirect("jsp/showcandidatesadmin.jsp");
+		response.sendRedirect("/showcandidatesadmin");
 	}
 }

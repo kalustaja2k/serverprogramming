@@ -32,6 +32,7 @@
 				
 		<input type='submit' name='ok' value='Muokkaa'>
 	</form>
+	<a href='./showcandidatesadmin' class="loginbutton">Takaisin</a>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

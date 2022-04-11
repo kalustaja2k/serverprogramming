@@ -24,12 +24,10 @@ public class AddQuestion extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-System.out.println("hei");
+
 		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
 		
-		//RequestDispatcher rd=request.getRequestDispatcher("staticpages/htmlstart.html");
-		//rd.include(request,  response);;
+		
 		
 		// Read parameters to Model
 				Questions question=readQuestions(request);
@@ -41,22 +39,19 @@ System.out.println("hei");
 				dao.saveQuestion(question);
 				ArrayList<Questions> list=dao.readAllQuestions();
 				
-				// print output and close connection
-				//printCandidatesList(out, list);
+				
 				dao.close();
 		
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addquestion.jsp");
 				rd.forward(request, response);
-				//out.println("<br><a href='./form.html'>Back to form</a>");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		System.out.println("moi");
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addquestion.jsp");
 				rd.forward(request, response);
-				//out.println("<br><a href='./form.html'>Back to form</a>");
+
 	}
 	
 	private Questions readQuestions(HttpServletRequest request) {

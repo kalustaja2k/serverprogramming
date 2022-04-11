@@ -26,7 +26,12 @@ public class EditQuestion extends HttpServlet {
 			throws IOException, ServletException {
 		
 		// Create connection
-		System.out.println("moi2");
+		HttpSession session = request.getSession();
+		String idValue = request.getParameter("kysymys_id");
+		int id = Integer.parseInt(idValue);
+		Dao dao = new Dao();
+		Questions questions = dao.getQuestionInfo(id);
+		session.setAttribute("question", questions);
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/editquestions.jsp");
 		rd.forward(request, response);
 	
@@ -40,38 +45,14 @@ public class EditQuestion extends HttpServlet {
 		//Create session
 				HttpSession session = request.getSession();
 				
-				String idValue = request.getParameter("kysymys_id");
-				
-				if ( idValue != null ) {
-					System.out.println("hei");
-					try {
-						int id = Integer.parseInt(idValue);
-					
-						Dao dao = new Dao();
-						Questions question = dao.getQuestionInfo(id);
-						
-						session.setAttribute("question", question);
-						
-						RequestDispatcher rd = request.getRequestDispatcher("jsp/editquestion.jsp");
-						rd.forward(request, response);
-						
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				} else {
-					// Back to list
-					System.out.println("moi");
-					response.sendRedirect("jsp/editquestion.jsp");
-					
-				}
+			
 				Dao dao=new Dao();
 				Questions questions = readQuestions(request);
 				
 				dao.updateQuestion(questions);
 				
 				dao.close();
-				System.out.println("terve");
-				response.sendRedirect("jsp/showquestionsadmin.jsp");  // redirect to candidates list
+				response.sendRedirect("/showquestionsadmin");  // redirect to candidates list
 	}
 	
 

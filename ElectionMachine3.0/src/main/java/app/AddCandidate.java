@@ -22,12 +22,9 @@ public class AddCandidate extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-System.out.println("hei");
+
 		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
 		
-		//RequestDispatcher rd=request.getRequestDispatcher("staticpages/htmlstart.html");
-		//rd.include(request,  response);;
 		
 		// Read parameters to Model
 				Candidates candidate=readCandidates(request);
@@ -39,22 +36,16 @@ System.out.println("hei");
 				dao.saveCandidate(candidate);
 				ArrayList<Candidates> list=dao.readAllCandidates();
 				
-				// print output and close connection
-				//printCandidatesList(out, list);
 				dao.close();
 		
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
 				rd.forward(request, response);
-				//out.println("<br><a href='./showcandidatesadmin.jsp'>Takaisin</a>");
 	}
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		System.out.println("moi");
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/addcandidate.jsp");
 				rd.forward(request, response);
-				//out.println("<br><a href='./form.html'>Back to form</a>");
 	}
 	
 	private Candidates readCandidates(HttpServletRequest request) {
@@ -72,11 +63,4 @@ System.out.println("hei");
 		return candidate;
 	}
 	
-	/*private void printCandidatesList(PrintWriter out, ArrayList<Candidates> list) {
-		out.println("<ul>");
-		for (Candidates c:list) {
-			out.println("<li>"+c);
-		}
-		out.println("</ul>");
-	}*/
 }

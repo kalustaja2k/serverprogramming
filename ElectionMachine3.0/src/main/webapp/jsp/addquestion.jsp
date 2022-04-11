@@ -14,13 +14,13 @@
 <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
-<h2>Lisaa uusi kysymys</h2>
+<h2>Lis‰‰ uusi kysymys</h2>
 
-<form action='/addquestion' method='post'>
+<form action='/addquestion' method='post' accept-charset="utf-8">
 Kysymys: <input type='text' name='kysymys' value=''><br>
 <input type='submit' name='ok' value='Tallenna'>
 </form>
-
+<a href='./showquestionsadmin' class="loginbutton">Takaisin</a>
 
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>

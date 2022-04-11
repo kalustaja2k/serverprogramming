@@ -32,7 +32,6 @@ public class EditCandidates extends HttpServlet {
 		Dao dao = new Dao();
 		Candidates candidates = dao.getCandidateInfo(id);
 		session.setAttribute("candidate", candidates);
-		System.out.println("moi2");
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/editcandidates.jsp");
 		rd.forward(request, response);
 	
@@ -46,52 +45,24 @@ public class EditCandidates extends HttpServlet {
 		//Create session
 				HttpSession session = request.getSession();
 				
-				String idValue = request.getParameter("ehdokas_id");
-				
-				if ( idValue != null ) {
-					System.out.println("hei");
-					try {
-						int id = Integer.parseInt(idValue);
-					
-						Dao dao = new Dao();
-						Candidates candidates = dao.getCandidateInfo(id);
-						
-						session.setAttribute("candidate", candidates);
-						
-						RequestDispatcher rd = request.getRequestDispatcher("jsp/editcandidates.jsp");
-						rd.forward(request, response);
-						return;
-						
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				} else {
-					// Back to list
-					System.out.println("moi");
-					response.sendRedirect("jsp/editcandidates.jsp");
-					return;
-					
-				}
+			
 				Dao dao=new Dao();
 				Candidates candidates = readCandidates(request);
 				
 				dao.updateCandidate(candidates);
 				
 				dao.close();
-				System.out.println("terve");
-				response.sendRedirect("jsp/showcandidatesadmin.jsp");  // redirect to candidates list
+				response.sendRedirect("/showcandidatesadmin");  // redirect to candidates list
 	}
 	
 
 	private Candidates readCandidates(HttpServletRequest request) {
 		Candidates candidates=new Candidates();
 		candidates.setEhdokas_id(Integer.parseInt(request.getParameter("ehdokas_id")));
-		//candidates.setEhdokas_id(request.getParameter("ehdokas_id"));
 		candidates.setEtunimi(request.getParameter("etunimi"));
 		candidates.setSukunimi(request.getParameter("sukunimi"));
 		candidates.setPuolue(request.getParameter("puolue"));
 		candidates.setKotikunta(request.getParameter("kotipaikkakunta"));
-		//candidates.setIka(request.getParameter("ika"));
 		candidates.setIka(Integer.parseInt(request.getParameter("ika")));
 		candidates.setEhdolle(request.getParameter("miksi_eduskuntaan"));
 		candidates.setEdistaa(request.getParameter("mita_asioita_haluat_edistaa"));

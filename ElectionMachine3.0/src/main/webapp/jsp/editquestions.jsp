@@ -16,9 +16,9 @@
  <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
-<h2>Muokkaa kysymyksia</h2>
+<h2>Muokkaa kysymyksiä</h2>
   
-<form action='./editquestion' method='post'>
+<form action='./editquestion' method='post' accept-charset="utf-8">
 		Kysymys: <input type='text' name='kysymys' value='${sessionScope.question.kysymys }'><br>
 
 		
@@ -26,6 +26,7 @@
 				
 		<input type='submit' name='ok' value='Muokkaa'>
 	</form>
+	<a href='./showquestionsadmin' class="loginbutton">Takaisin</a>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

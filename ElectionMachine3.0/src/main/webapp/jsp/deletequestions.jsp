@@ -20,7 +20,7 @@
 		<input type="hidden" name="kysymys_id" value="${sessionScope.question.kysymys_id }">		
 		<input type='submit' name='ok' value='Poista'>
 	</form>
-	<a href='jsp/showquestionsadmin.jsp' class="loginbutton">Takaisin</a>
+	<a href='/showquestionsadmin' class="loginbutton">Takaisin</a>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

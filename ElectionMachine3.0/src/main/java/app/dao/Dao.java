@@ -196,8 +196,9 @@ public class Dao {
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setInt(1, question.getKysymys_id());
-			stmt.setString(2, question.getKysymys());
+			
+			stmt.setString(1, question.getKysymys());
+			stmt.setInt(2, question.getKysymys_id());
 			
 			count = stmt.executeUpdate();
 		} catch (SQLException e) {

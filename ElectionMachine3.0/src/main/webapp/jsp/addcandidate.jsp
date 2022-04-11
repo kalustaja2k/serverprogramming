@@ -14,21 +14,21 @@
  <link rel="stylesheet" type="text/css" href="../css/jsp.css">
 </head>
 <body>
-<h2>Lisaa uusi ehdokas</h2>
+<h2>Lis‰‰ uusi ehdokas</h2>
 
 
-<form action='./addcandidate' method='post'>
+<form action='./addcandidate' method='post' accept-charset="utf-8">
 Etunimi: <input type='text' name='etunimi' value=''><br>
 Sukunimi: <input type='text' name='sukunimi' value=''><br>
 Puolue: <input type='text' name='puolue' value=''><br>
 Kotipaikkakunta: <input type='text' name='kotipaikkakunta' value=''><br>
-Ika: <input type='text' name='ika' value=''><br>
+Ik‰: <input type='text' name='ika' value=''><br>
 Miksi haluat ehdolle?: <input type='text' name='miksi_eduskuntaan' value=''><br>
-Mita haluat edistaa?: <input type='text' name='mita_asioita_haluat_edistaa' value=''><br>
+Mit‰ haluat edist‰‰?: <input type='text' name='mita_asioita_haluat_edistaa' value=''><br>
 Ammatti: <input type='text' name='ammatti' value=''><br>
 <input type='submit' name='ok' value='Tallenna'>
 </form>
-
+<a href='./showcandidatesadmin' class="loginbutton">Takaisin</a>
 
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>

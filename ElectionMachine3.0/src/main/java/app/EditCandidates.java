@@ -26,6 +26,12 @@ public class EditCandidates extends HttpServlet {
 			throws IOException, ServletException {
 		
 		// Create connection
+		HttpSession session = request.getSession();
+		String idValue = request.getParameter("ehdokas_id");
+		int id = Integer.parseInt(idValue);
+		Dao dao = new Dao();
+		Candidates candidates = dao.getCandidateInfo(id);
+		session.setAttribute("candidate", candidates);
 		System.out.println("moi2");
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/editcandidates.jsp");
 		rd.forward(request, response);
@@ -54,6 +60,7 @@ public class EditCandidates extends HttpServlet {
 						
 						RequestDispatcher rd = request.getRequestDispatcher("jsp/editcandidates.jsp");
 						rd.forward(request, response);
+						return;
 						
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -62,6 +69,7 @@ public class EditCandidates extends HttpServlet {
 					// Back to list
 					System.out.println("moi");
 					response.sendRedirect("jsp/editcandidates.jsp");
+					return;
 					
 				}
 				Dao dao=new Dao();

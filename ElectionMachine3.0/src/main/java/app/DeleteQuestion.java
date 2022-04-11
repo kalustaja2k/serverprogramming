@@ -63,19 +63,16 @@ public class DeleteQuestion extends HttpServlet {
 		try {
 			dao.deleteQuestion(Integer.parseInt(request.getParameter("kysymys_id")));
 		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	
 
 		dao.close();
 
-		// Back to list after actions
-		//RequestDispatcher rd = request.getRequestDispatcher("/");
-		//rd.forward(request, response);
 		response.sendRedirect("/showquestionsadmin");
 	}
 }

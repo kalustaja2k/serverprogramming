@@ -52,7 +52,7 @@ public class EditQuestion extends HttpServlet {
 				dao.updateQuestion(questions);
 				
 				dao.close();
-				response.sendRedirect("/showquestionsadmin");  // redirect to candidates list
+				response.sendRedirect("/showquestionsadmin");  // redirect to questions list
 	}
 	
 

@@ -6,7 +6,6 @@
  <%@ page import="app.dao.Dao" %> 
  <%@ include file="../header.html" %> 
 
-
 <!DOCTYPE html>
 <html> <!-- Login is not finished yet -->
 <head>

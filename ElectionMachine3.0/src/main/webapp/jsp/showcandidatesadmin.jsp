@@ -8,6 +8,7 @@
 <%@ page import="app.Candidates" %>
 <%@ include file="../header.html" %>
      
+     
 <!DOCTYPE html>
 <html>
 <head>

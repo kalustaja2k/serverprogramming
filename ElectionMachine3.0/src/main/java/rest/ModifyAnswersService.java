@@ -19,6 +19,7 @@ import rest.Answers;
 
 @Path("/modifyanswersservice")
 public class ModifyAnswersService {
+	
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("electionmachine3.0"); 
 	@GET
 	@Path("/readanswers")
@@ -27,7 +28,7 @@ public class ModifyAnswersService {
 	public List<Answers> readAnswers() {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		List<Answers> list=em.createQuery("select xyx from Fish xyx").getResultList();		//CHANGE LATER
+		List<Answers> list=em.createQuery("select a from Answers a").getResultList();		//CHANGE LATER
 		em.getTransaction().commit();
 		return list;
 	}	
@@ -35,12 +36,12 @@ public class ModifyAnswersService {
 	@Path("/addanswers")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Answers> addFish(Answers answers) {
+	public List<Answers> addAnswers(Answers answers) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(answers);//The actual insertion line
 		em.getTransaction().commit();
-		//Calling the method readFish() of this service
+		//Calling the method readAnswers() of this service
 		List<Answers> list=readAnswers();		
 		return list;
 	}	
@@ -48,7 +49,7 @@ public class ModifyAnswersService {
 	@Path("/updateanswers")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Answers> updateFish(Answers answers) {
+	public List<Answers> updateAnswers(Answers answers) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		Answers a =em.find(Answers.class, answers.getKysymys_id());
@@ -81,7 +82,7 @@ public class ModifyAnswersService {
 	@Path("/readtoupdateanswers/{id}")  				//WE HAVE 2 ID'S ?????
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Answers readToUpdateFish(@PathParam("id") int id) {
+	public Answers readToUpdateAnswers(@PathParam("id") int id) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		Answers a =em.find(Answers.class, id);

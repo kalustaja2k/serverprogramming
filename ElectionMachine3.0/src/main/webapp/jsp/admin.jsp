@@ -32,6 +32,11 @@
 		</a>
 	</div>
 
+<div class="link">
+		<a href="http://localhost:8080/rest/modifyanswersservice/readanswers"> 
+			<input class="button" type="submit" value="Muokkaa vastauksia" />
+		</a>
+	</div>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

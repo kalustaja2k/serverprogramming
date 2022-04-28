@@ -19,6 +19,10 @@ public class Answers {
 	public Answers() {
 		
 	}
+	public Answers(String vastaus, String kommentti) {
+		setVastaus(vastaus);
+		this.kommentti=kommentti;
+	}
 	public Answers(int kysymys_id, int ehdokas_id, String vastaus, String kommentti) {
 		setKysymys_id(kysymys_id);
 		this.kysymys_id=kysymys_id;

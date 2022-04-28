@@ -55,14 +55,14 @@ public class ModifyCandidateAnswers extends HttpServlet {
 		  return;
 	  }
 	  request.setAttribute("answerslist", list);
-	  RequestDispatcher rd=request.getRequestDispatcher("./jsp/fishform.jsp"); //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
+	  RequestDispatcher rd=request.getRequestDispatcher("./jsp/candidateanswers.jsp"); //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
 	  rd.forward(request, response);
  }
 
 	private Answers readtoupdateanswers(HttpServletRequest request) {
 		String kysymys_id=request.getParameter("Kysymys_id");
 		String ehdokas_id=request.getParameter("ehdokas_id");
-		String uri = "http://127.0.0.1:8080/rest/fishservice/readtoupdatefish/"+kysymys_id+ehdokas_id; //THIS NEEDS TO BE CHANGED LATER
+		String uri = "http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/"+kysymys_id+ehdokas_id; //THIS NEEDS TO BE CHANGED LATER
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
@@ -74,7 +74,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 		//An answers object to send to our web-service 
 		Answers a =new Answers(request.getParameter("vastaus"), request.getParameter("kommentti")); 
 		System.out.println(a);
-		String uri = "http://127.0.0.1:8080/rest/fishservice/addfish"; //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
+		String uri = "http://localhost:8080/rest/modifyanswersservice/addanswers"; //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
@@ -93,7 +93,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	private List<Answers> readanswers(HttpServletRequest request) {
 		String kysymys_id=request.getParameter("Kysymys_id");
 		String ehdokas_id=request.getParameter("ehdokas_id");
-		String uri = "http://127.0.0.1:8080/rest/fishservice/readfish";  //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
+		String uri = "http://localhost:8080/rest/modifyanswersservice/readanswers";  //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
@@ -109,7 +109,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 		//An answers object to send to our web-service 
 		Answers a =new Answers(request.getParameter("kysymys_id"),request.getParameter("ehdokas_id"), request.getParameter("vastaus"), request.getParameter("kommentti")); 
 		System.out.println(a);
-		String uri = "http://127.0.0.1:8080/rest/fishservice/updatefish"; //CHANGE TO ANSWERS
+		String uri = "http://localhost:8080/rest/modifyanswersservice/updateanswers"; //CHANGE TO ANSWERS
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
@@ -129,7 +129,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	private List<Answers> deleteanswers(HttpServletRequest request) {
 		String kysymys_id=request.getParameter("Kysymys_id");
 		String ehdokas_id=request.getParameter("ehdokas_id");
-		String uri = "http://127.0.0.1:8080/rest/fishservice/deletefish/"+kysymys_id+ehdokas_id; //NEEDS TO BE CHANGED LATER
+		String uri = "http://localhost:8080/rest/modifyanswersservice/deleteanswers/"+kysymys_id+ehdokas_id; //NEEDS TO BE CHANGED LATER
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();

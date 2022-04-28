@@ -16,7 +16,7 @@
 </form>
 <ol>
 <c:forEach var="answers" items="${requestScope.answerslist }">
-	<li>${answers} <a href='../deleteanswers?id=${answers.kysymys_id}'>Delete</a> <a href='../readtoupdateanswers?id=${answer.kysymys_id}'>Update</a>
+	<li>${answers} <a href='../deleteanswers?id=${answers.kysymys_id}'>Poista</a> <a href='../readtoupdateanswers?id=${answer.kysymys_id}'>Muokkaa</a>
 </c:forEach>
 </ol>
 </body>

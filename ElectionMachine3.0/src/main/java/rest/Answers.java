@@ -24,19 +24,28 @@ public class Answers {
 		this.kommentti=kommentti;
 	}
 	public Answers(int kysymys_id, int ehdokas_id, String vastaus, String kommentti) {
-		setKysymys_id(kysymys_id);
+		//setKysymys_id(kysymys_id);
 		this.kysymys_id=kysymys_id;
-		setEhdokas_id(ehdokas_id);
+		//setEhdokas_id(ehdokas_id);
 		this.ehdokas_id=ehdokas_id;
 		setVastaus(vastaus);
 		this.kommentti=kommentti;
 	}
 	public Answers(int kysymys_id, int ehdokas_id, int vastaus, String kommentti) {
-		setKysymys_id(kysymys_id);
+		//setKysymys_id(kysymys_id);
 		this.kysymys_id=kysymys_id;
-		setEhdokas_id(ehdokas_id);
+		//setEhdokas_id(ehdokas_id);
 		this.ehdokas_id=ehdokas_id;
 		this.vastaus=vastaus;
+		this.kommentti=kommentti;
+	}
+	public Answers(String kysymys_id, String ehdokas_id, String vastaus, String kommentti) {
+		setKysymys_id(kysymys_id);
+		//this.kysymys_id=kysymys_id;
+		setEhdokas_id(ehdokas_id);
+		//this.ehdokas_id=ehdokas_id;
+		setVastaus(vastaus);
+		//this.vastaus=vastaus;
 		this.kommentti=kommentti;
 	}
 	public int getKysymys_id() {

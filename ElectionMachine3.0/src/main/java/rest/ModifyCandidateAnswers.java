@@ -107,7 +107,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	
 	private List<Answers> updateanswers(HttpServletRequest request) {
 		//An answers object to send to our web-service 
-		Answers a =new Answers(request.getParameter("id"), request.getParameter("vastaus"), request.getParameter("kommentti")); 
+		Answers a =new Answers(request.getParameter("kysymys_id"),request.getParameter("ehdokas_id"), request.getParameter("vastaus"), request.getParameter("kommentti")); 
 		System.out.println(a);
 		String uri = "http://127.0.0.1:8080/rest/fishservice/updatefish"; //CHANGE TO ANSWERS
 		Client c=ClientBuilder.newClient();

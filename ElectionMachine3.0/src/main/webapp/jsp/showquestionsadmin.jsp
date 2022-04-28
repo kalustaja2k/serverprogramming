@@ -3,9 +3,9 @@
     <%@ page import="java.util.ArrayList"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../header.html" %>
-<%@ page import="app.Questions"%>
-<%@ page import="app.dao.Dao"%>
-<%@ page import="app.ShowQuestion"%>
+<%@ page import="rest.Questions"%>
+<%@ page import="dao.Dao"%>
+<%@ page import="rest.ShowQuestion"%>
     
 <!DOCTYPE html>
 <html>

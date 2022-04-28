@@ -2,9 +2,9 @@
     pageEncoding="ISO-8859-1"%>
  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="app.Questions" %> 
+<%@ page import="rest.Questions" %> 
 <%@ include file="../header.html" %>  
- <%@ page import="app.dao.Dao" %> 
+ <%@ page import="dao.Dao" %> 
 
 
     

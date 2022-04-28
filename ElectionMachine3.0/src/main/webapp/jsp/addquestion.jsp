@@ -3,7 +3,7 @@
     
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
    <%@ page import="java.util.ArrayList" %>   
- <%@ page import="app.dao.Dao" %> 
+ <%@ page import="dao.Dao" %> 
  <%@ include file="../header.html" %> 
 
 <!DOCTYPE html>

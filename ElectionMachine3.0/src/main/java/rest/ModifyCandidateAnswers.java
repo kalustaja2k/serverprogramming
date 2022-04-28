@@ -66,12 +66,12 @@ public class ModifyCandidateAnswers extends HttpServlet {
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
 		Answers answers=b.get(Answers.class);
-		return Answers;
+		return answers;
 	}
 
-	private List<Answers> addfish(HttpServletRequest request) {
+	private List<Answers> addanswers(HttpServletRequest request) {
 		//An answers object to send to our web-service 
-		Answers a =new Answers(request.getParameter("breed"), request.getParameter("weight")); //CHANGE PARAMETERS TO ANSWERS
+		Answers a =new Answers(request.getParameter("vastaus"), request.getParameter("kommentti")); 
 		System.out.println(a);
 		String uri = "http://127.0.0.1:8080/rest/fishservice/addfish"; //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
 		Client c=ClientBuilder.newClient();
@@ -105,7 +105,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	
 	private List<Answers> updateanswers(HttpServletRequest request) {
 		//An answers object to send to our web-service 
-		Answers a =new Answers(request.getParameter("id"), request.getParameter("breed"), request.getParameter("weight")); //CHANGE PARAMETERS
+		Answers a =new Answers(request.getParameter("id"), request.getParameter("vastaus"), request.getParameter("kommentti")); 
 		System.out.println(a);
 		String uri = "http://127.0.0.1:8080/rest/fishservice/updatefish"; //CHANGE TO ANSWERS
 		Client c=ClientBuilder.newClient();

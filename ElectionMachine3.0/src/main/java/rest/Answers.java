@@ -39,6 +39,7 @@ public class Answers {
 		this.vastaus=vastaus;
 		this.kommentti=kommentti;
 	}
+	
 	public Answers(String kysymys_id, String ehdokas_id, String vastaus, String kommentti) {
 		setKysymys_id(kysymys_id);
 		//this.kysymys_id=kysymys_id;

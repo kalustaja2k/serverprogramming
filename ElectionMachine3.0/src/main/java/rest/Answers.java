@@ -19,6 +19,14 @@ public class Answers {
 	public Answers() {
 		
 	}
+	public Answers(int kysymys_id, int ehdokas_id, String vastaus, String kommentti) {
+		setKysymys_id(kysymys_id);
+		this.kysymys_id=kysymys_id;
+		setEhdokas_id(ehdokas_id);
+		this.ehdokas_id=ehdokas_id;
+		setVastaus(vastaus);
+		this.kommentti=kommentti;
+	}
 	public Answers(int kysymys_id, int ehdokas_id, int vastaus, String kommentti) {
 		setKysymys_id(kysymys_id);
 		this.kysymys_id=kysymys_id;
@@ -62,6 +70,15 @@ public class Answers {
 	}
 	public void setVastaus(int vastaus) {
 		this.vastaus = vastaus;
+	}
+	public void setVastaus(String vastaus) {
+		
+		try {
+			this.vastaus = Integer.parseInt(vastaus);
+		}
+		catch(NumberFormatException | NullPointerException e) {
+
+		}
 	}
 	public String getKommentti() {
 		return kommentti;

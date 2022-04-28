@@ -19,7 +19,6 @@
 		See the element servlet-mapping below. Its servlet-name element should
 		have exactly the same value as here in the servlet element is.
 	-->
-	
 	<servlet>
 		<servlet-name>electionmachine</servlet-name>
 		<servlet-class>

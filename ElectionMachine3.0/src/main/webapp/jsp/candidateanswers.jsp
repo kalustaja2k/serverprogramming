@@ -24,12 +24,21 @@
 </c:forEach>
 </ul>
 
+<ol>
+<c:forEach var="question" items="${sessionScope.allquestions}">
+<b><li>
+${question.kysymys}
+</li></b>
+</c:forEach>
+</ol>
+
+
 <table>
-<tr> <p> 1. Täysin eri mieltä</tr>
-<tr> <p> 2. Jokseenkin eri mieltä</tr>
-<tr> <p> 3. En osaa sanoa</tr>
-<tr> <p> 4. Jokseenkin samaa mieltä</tr>
-<tr> <p> 5. Täysin samaa mieltä</tr>
+<tr> <td> 1. Täysin eri mieltä </td></tr>
+<tr> <td> 2. Jokseenkin eri mieltä </td></tr>
+<tr> <td> 3. En osaa sanoa </td></tr>
+<tr> <td> 4. Jokseenkin samaa mieltä </td></tr>
+<tr> <td> 5. Täysin samaa mieltä </td></tr>
 
 </table>
 </body>

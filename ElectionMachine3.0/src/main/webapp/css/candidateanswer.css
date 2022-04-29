@@ -1,7 +1,18 @@
 @charset "ISO-8859-1";
+/* this css is for candidateanswer.jsp*/
 
-.candidateanswers{
+body{
 	text-align:center;
 	margin-left: 25%;
 	margin-right: 25%;
+}
+
+table, th, td{
+	border: 1px, solid black;
+}
+
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
 }

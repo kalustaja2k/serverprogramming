@@ -29,18 +29,21 @@
 </ul>
 
 <ol>
-<c:forEach var="question" items="${sessionScope.allquestions}"><p>Kysymys<p>
-<b>${question.kysymys}</b>
+<c:forEach var="question" items="${sessionScope.allquestions}">
+<li>
+<b>
+${question.kysymys}
+</b></li>
 </c:forEach>
 </ol>
 
 
 <table>
-<tr> <td> 1. T‰ysin eri mielt‰ </td></tr>
-<tr> <td> 2. Jokseenkin eri mielt‰ </td></tr>
+<tr> <td> 1. T√§ysin eri mielt√§ </td></tr>
+<tr> <td> 2. Jokseenkin eri mielt√§ </td></tr>
 <tr> <td> 3. En osaa sanoa </td></tr>
-<tr> <td> 4. Jokseenkin samaa mielt‰ </td></tr>
-<tr> <td> 5. T‰ysin samaa mielt‰ </td></tr>
+<tr> <td> 4. Jokseenkin samaa mielt√§ </td></tr>
+<tr> <td> 5. T√§ysin samaa mielt√§ </td></tr>
 </table>
 
 <footer>

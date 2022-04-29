@@ -35,9 +35,10 @@
 
 <ol>
 <c:forEach var="question" items="${sessionScope.allquestions}">
-<b><li>
+<li>
+<b>
 ${question.kysymys}
-</li></b>
+</b></li>
 </c:forEach>
 </ol>
 

@@ -60,9 +60,9 @@ public class ModifyCandidateAnswers extends HttpServlet {
  }
 
 	private Answers readtoupdateanswers(HttpServletRequest request) {
-		String kysymys_id=request.getParameter("Kysymys_id");
 		String ehdokas_id=request.getParameter("ehdokas_id");
-		String uri = "http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/"+kysymys_id+ehdokas_id; 
+		String kysymys_id=request.getParameter("Kysymys_id");
+		String uri = "http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/"+ehdokas_id+kysymys_id; 
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
@@ -107,7 +107,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	
 	private List<Answers> updateanswers(HttpServletRequest request) {
 		//An answers object to send to our web-service 
-		Answers a =new Answers(request.getParameter("kysymys_id"),request.getParameter("ehdokas_id"),request.getParameter("vastaus"), request.getParameter("kommentti")); 
+		Answers a =new Answers(request.getParameter("ehdokas_id"),request.getParameter("kysymys_id"),request.getParameter("vastaus"), request.getParameter("kommentti")); 
 		System.out.println(a);
 		String uri = "http://localhost:8080/rest/modifyanswersservice/updateanswers"; 
 		Client c=ClientBuilder.newClient();
@@ -127,9 +127,9 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	}
 	
 	private List<Answers> deleteanswers(HttpServletRequest request) {
-		String kysymys_id=request.getParameter("Kysymys_id");
-		String ehdokas_id=request.getParameter("ehdokas_id");
-		String uri = "http://localhost:8080/rest/modifyanswersservice/deleteanswers/"+kysymys_id+ehdokas_id;
+		String kysymys_id=request.getParameter("ehdokas_id");
+		String ehdokas_id=request.getParameter("kysymys_id");
+		String uri = "http://localhost:8080/rest/modifyanswersservice/deleteanswers/"+ehdokas_id+kysymys_id;
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();

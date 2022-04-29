@@ -35,19 +35,38 @@
 
 
 
+
 <h3>Kysymykset:</h3> <br>
 <c:forEach var="question" items="${sessionScope.allquestions}">
  <b>${question.kysymys_id }.</b> 
  <b> ${question.kysymys}</b> <br>
+
+<ol>
+<c:forEach var="question" items="${sessionScope.allquestions}">
+<li>
+<b>
+${question.kysymys}
+</b></li>
+
 </c:forEach>
 
 
+
 <h3>Vastaukset:</h3> <br>
-<b>1. Täysin eri mieltä </b> <br>
-<b>2. Jokseenkin eri mieltä <br>
+<b>1. Tï¿½ysin eri mieltï¿½ </b> <br>
+<b>2. Jokseenkin eri mieltï¿½ <br>
 <b>3. En osaa sanoa </b> <br>
-<b>4. Jokseenkin samaa mieltä</b> <br>
-<b>5. Täysin samaa mieltä</b> <br>
+<b>4. Jokseenkin samaa mieltï¿½</b> <br>
+<b>5. Tï¿½ysin samaa mieltï¿½</b> <br>
+
+
+<table>
+<tr> <td> 1. TÃ¤ysin eri mieltÃ¤ </td></tr>
+<tr> <td> 2. Jokseenkin eri mieltÃ¤ </td></tr>
+<tr> <td> 3. En osaa sanoa </td></tr>
+<tr> <td> 4. Jokseenkin samaa mieltÃ¤ </td></tr>
+<tr> <td> 5. TÃ¤ysin samaa mieltÃ¤ </td></tr>
+</table>
 
 
 <footer>

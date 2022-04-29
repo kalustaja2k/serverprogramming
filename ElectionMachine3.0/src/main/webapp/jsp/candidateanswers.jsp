@@ -2,21 +2,16 @@
     pageEncoding="ISO-8859-1"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.ArrayList" %>   
-<%@ page import="dao.Dao" %> 
 <%@ include file="../header.html" %>
+
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
 <title>Muokkaa vastauksia</title>
-<link rel="stylesheet" type="text/css" href="../css/candidateanswer.css">
- <link rel="stylesheet" type="text/css" href="../css/header.css">
 </head>
 <body>
 
-<div class= candidateanswers>
 <form action='../addanswers' method='post'>
 <input type='text' name='vastaus' value=''>
 <input type='text' name='kommentti' value=''>
@@ -34,12 +29,11 @@
 </ul>
 
 <ol>
-<c:forEach var="question" items="${sessionScope.allquestions}">
-<b><li>
-${question.kysymys}
-</li></b>
+<c:forEach var="question" items="${sessionScope.allquestions}"><p>Kysymys<p>
+<b>${question.kysymys}</b>
 </c:forEach>
 </ol>
+
 
 <table>
 <tr> <td> 1. Täysin eri mieltä </td></tr>
@@ -48,7 +42,7 @@ ${question.kysymys}
 <tr> <td> 4. Jokseenkin samaa mieltä </td></tr>
 <tr> <td> 5. Täysin samaa mieltä </td></tr>
 </table>
-</div>
+
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

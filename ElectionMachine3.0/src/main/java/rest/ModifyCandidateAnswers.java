@@ -50,7 +50,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	  case "/readtoupdateanswers":
 		  Answers a =readtoupdateanswers(request);
 		  request.setAttribute("answers", a);
-		  RequestDispatcher rd=request.getRequestDispatcher("./jsp/fishtoupdateform.jsp"); //THIS NEEDS TO BE CHANGED LATER TO ANSWERS
+		  RequestDispatcher rd=request.getRequestDispatcher("./jsp/answersupdate.jsp"); 
 		  rd.forward(request, response);
 		  return;
 	  }

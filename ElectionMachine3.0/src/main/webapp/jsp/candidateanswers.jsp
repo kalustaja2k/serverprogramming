@@ -1,19 +1,28 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.ArrayList" %>   
+<%@ page import="dao.Dao" %> 
+<%@ include file="../header.html" %>
 <!DOCTYPE html>
 <html>
 
 <head>
 <meta charset="UTF-8">
 <title>Muokkaa vastauksia</title>
+<link rel="stylesheet" type="text/css" href="../css/candidateanswer.css">
+ <link rel="stylesheet" type="text/css" href="../css/header.css">
 </head>
 <body>
+
+<div class= candidateanswers>
 <form action='../addanswers' method='post'>
 <input type='text' name='vastaus' value=''>
 <input type='text' name='kommentti' value=''>
 <input type='submit' name='ok' value='OK'>
 </form>
+
 <ul>
 <c:forEach var="answers" items="${requestScope.answerslist }">
 <li> 
@@ -32,14 +41,16 @@ ${question.kysymys}
 </c:forEach>
 </ol>
 
-
 <table>
-<tr> <td> 1. T√§ysin eri mielt√§ </td></tr>
-<tr> <td> 2. Jokseenkin eri mielt√§ </td></tr>
+<tr> <td> 1. T‰ysin eri mielt‰ </td></tr>
+<tr> <td> 2. Jokseenkin eri mielt‰ </td></tr>
 <tr> <td> 3. En osaa sanoa </td></tr>
-<tr> <td> 4. Jokseenkin samaa mielt√§ </td></tr>
-<tr> <td> 5. T√§ysin samaa mielt√§ </td></tr>
-
+<tr> <td> 4. Jokseenkin samaa mielt‰ </td></tr>
+<tr> <td> 5. T‰ysin samaa mielt‰ </td></tr>
 </table>
+</div>
+<footer>
+ <p>Team 9 - Ville Lahtinen & Silja Markku </p>
+ </footer>
 </body>
 </html>

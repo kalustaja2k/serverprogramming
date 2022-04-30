@@ -3,8 +3,8 @@
 
 body{
 	text-align:center;
-	margin-left: 25%;
-	margin-right: 25%;
+	/*margin-left: 25%;
+	margin-right: 25%;*/
 }
 
 table, th, td{
@@ -15,4 +15,8 @@ ul.no-bullets {
   list-style-type: none; /* Remove bullets */
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
+}
+div {
+	margin-left: 25%;
+	margin-right: 25%;
 }

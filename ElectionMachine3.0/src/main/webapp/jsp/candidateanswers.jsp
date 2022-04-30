@@ -16,7 +16,7 @@
 </head>
 <body>
 
-
+<div>
 <form action='../addanswers' method='post'>
 <input type='text' name='vastaus' value=''>
 <input type='text' name='kommentti' value=''>
@@ -40,7 +40,7 @@
 <c:forEach var="question" items="${sessionScope.allquestions}">
  <b>${question.kysymys_id }.</b> 
  <b> ${question.kysymys}</b> <br>
-
+</c:forEach>
 <ol>
 <c:forEach var="question" items="${sessionScope.allquestions}">
 <li>
@@ -67,8 +67,9 @@ ${question.kysymys}
 <tr> <td> 4. Jokseenkin samaa mieltä </td></tr>
 <tr> <td> 5. Täysin samaa mieltä </td></tr>
 </table>
-
-
+</div>
+<br>
+<br>
 <footer>
  <p>Team 9 - Ville Lahtinen & Silja Markku </p>
  </footer>

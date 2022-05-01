@@ -2,7 +2,7 @@
 /* this css is for candidateanswer.jsp*/
 
 body{
-	text-align:center;
+	
 	/*margin-left: 25%;
 	margin-right: 25%;*/
 }
@@ -16,7 +16,21 @@ ul.no-bullets {
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
 }
-div {
-	margin-left: 25%;
-	margin-right: 25%;
+.kysymykset h3 {
+	text-align: center;
+	
+}
+.kysymykset b {
+	margin-left: 30%;
+}
+.vastaukset {
+	text-align: center;
+}
+.mielipide h3 {
+	text-align: center;
+	
+}
+.mielipide b {
+	margin-left: 45%;
+	
 }

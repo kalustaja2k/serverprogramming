@@ -105,11 +105,23 @@ public class ModifyAnswersService {
 	@Path("/readtoupdateanswers/{id}")  				//WE HAVE 2 ID'S ?????
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Answers readToUpdateAnswers(@PathParam("id") int id) {
+	public Answers readToUpdateAnswers(@PathParam("kysymys_id") int id) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		Answers a =em.find(Answers.class, id);
 		em.getTransaction().commit();
 		return a;
+	}
+	public void readAllToUpdateAnswers() {
+		List<Answers> list= readAnswers();
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/answerupdate.jsp");
+		request.setAttribute("answerslist", list);
+		try {
+			rd.forward(request, response);
+		} catch (ServletException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}	
 }

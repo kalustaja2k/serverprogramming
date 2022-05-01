@@ -16,58 +16,45 @@
 </head>
 <body>
 
-<div>
-<form action='../addanswers' method='post'>
+
+<form action='/rest/modifyanswersservice/addanswers' method='post' accept-charset="utf-8">
 <input type='text' name='vastaus' value=''>
 <input type='text' name='kommentti' value=''>
 <input type='submit' name='ok' value='OK'>
 </form>
 
-
+<section class="vastaukset">
 <c:forEach var="answers" items="${requestScope.answerslist }"> 
 <b>${answers.kommentti}</b> 
 <b> on ${answers.vastaus}</b>
 
-<a href='../deleteanswers?id=${answers.kysymys_id}'>Poista</a> 
-<a href='../readtoupdateanswers?id=${answer.kysymys_id}'>Muokkaa</a>  
+<a href='http://localhost:8080/rest/modifyanswersservice/deleteanswers?id=${answers.kysymys_id}'>Poista</a> 
+<a href='http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers?id=${answer.kysymys_id}'>Muokkaa</a>  
 <br> <br>  
 </c:forEach>
+</section>
 
 
-
-
+<section class="kysymykset">
 <h3>Kysymykset:</h3> <br>
 <c:forEach var="question" items="${sessionScope.allquestions}">
- <b>${question.kysymys_id }.</b> 
- <b> ${question.kysymys}</b> <br>
-</c:forEach>
-<ol>
-<c:forEach var="question" items="${sessionScope.allquestions}">
-<li>
-<b>
-${question.kysymys}
-</b></li>
-
+ <b>${question.kysymys_id }.
+  ${question.kysymys}</b> <br>
 </c:forEach>
 
+</section>
 
-
+<section class="mielipide">
 <h3>Vastaukset:</h3> <br>
-<b>1. Tï¿½ysin eri mieltï¿½ </b> <br>
-<b>2. Jokseenkin eri mieltï¿½ <br>
+<b>1. Täysin eri mieltä </b> <br>
+<b>2. Jokseenkin eri mieltä </b><br>
 <b>3. En osaa sanoa </b> <br>
-<b>4. Jokseenkin samaa mieltï¿½</b> <br>
-<b>5. Tï¿½ysin samaa mieltï¿½</b> <br>
+<b>4. Jokseenkin samaa mieltä</b> <br>
+<b>5. Täysin samaa mieltä</b> <br>
+</section>
 
 
-<table>
-<tr> <td> 1. TÃ¤ysin eri mieltÃ¤ </td></tr>
-<tr> <td> 2. Jokseenkin eri mieltÃ¤ </td></tr>
-<tr> <td> 3. En osaa sanoa </td></tr>
-<tr> <td> 4. Jokseenkin samaa mieltÃ¤ </td></tr>
-<tr> <td> 5. TÃ¤ysin samaa mieltÃ¤ </td></tr>
-</table>
-</div>
+<br>
 <br>
 <br>
 <footer>

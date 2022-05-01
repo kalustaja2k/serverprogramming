@@ -60,9 +60,9 @@ public class ModifyCandidateAnswers extends HttpServlet {
  }
 
 	private Answers readtoupdateanswers(HttpServletRequest request) {
-		String ehdokas_id=request.getParameter("ehdokas_id");
-		String kysymys_id=request.getParameter("Kysymys_id");
-		String uri = "http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/"+ehdokas_id+kysymys_id; 
+		//String ehdokas_id=request.getParameter("ehdokas_id");
+		String kysymys_id=request.getParameter("kysymys_id");
+		String uri = "http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/"+kysymys_id; 
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();

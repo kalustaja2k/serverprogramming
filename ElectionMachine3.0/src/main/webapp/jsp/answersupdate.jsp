@@ -9,7 +9,7 @@
 <title>Muokkaa vastauksia</title>
 </head>
 <body>
-<form action='../updateansers' method='post'>
+<form action='../updateanswers' method='post'>
 <input type='text' name='id' value='${requestScope.answers.ehdokas_id }'>
 <input type='text' name='breed' value='${requestScope.answers.kysymys_id }'>
 <input type='text' name='weight' value='${requestScope.answers.vastaus }'>

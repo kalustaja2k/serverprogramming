@@ -85,6 +85,8 @@ public class ModifyAnswersService {
 		List<Answers> list=readAnswers();		
 		return list;
 	}	
+	
+	
 	@DELETE
 	@Path("/deleteanswers/{id}")									//WE HAVE 2 ID'S ?????
 	@Produces(MediaType.APPLICATION_JSON)
@@ -114,7 +116,7 @@ public class ModifyAnswersService {
 	}
 	public void readAllToUpdateAnswers() {
 		List<Answers> list= readAnswers();
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/answerupdate.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/answersupdate.jsp");
 		request.setAttribute("answerslist", list);
 		try {
 			rd.forward(request, response);

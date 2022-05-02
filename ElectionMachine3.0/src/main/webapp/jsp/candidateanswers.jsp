@@ -25,6 +25,7 @@
 
 <section class="vastaukset">
 <c:forEach var="answers" items="${requestScope.answerslist }"> 
+<b>${answers.kysymys_id}</b>
 <b>${answers.kommentti}</b> 
 <b> on ${answers.vastaus}</b>
 

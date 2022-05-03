@@ -68,6 +68,7 @@ public class ModifyAnswersService {
 		List<Answers> list=readAnswers();		
 		return list;
 	}	
+	
 	@PUT
 	@Path("/updateanswers")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -75,8 +76,8 @@ public class ModifyAnswersService {
 	public List<Answers> updateAnswers(Answers answers) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		Answers a =em.find(Answers.class, answers.getKysymys_id());
-	//	Answers a =em.find(Answers.class, answers.getEhdokas_id()); DOES THIS NEED 2 IF SENTENCES ????????
+		Answers a =em.find(Answers.class, answers.getEhdokas_id());
+		//Answers a =em.find(Answers.class, answers.getKysymys_id()); 
 		if (a!=null) {
 			em.merge(answers);//The actual update line
 		}
@@ -88,23 +89,30 @@ public class ModifyAnswersService {
 	
 	
 	@DELETE
-	@Path("/deleteanswers/{id}")									//WE HAVE 2 ID'S ?????
+	@Path("/deleteanswers/{kysymys_id}")									
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Answers> deleteAnswers(@PathParam("id") int id) { //WE HAVE 2 ID'S ?????
+	public void deleteAnswers(@PathParam("kysymys_id") int id) { 
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		Answers a=em.find(Answers.class, id);  					//WE HAVE 2 ID'S ????? 
+		Answers a=em.find(Answers.class, id);  					
 		if (a!=null) {
 			em.remove(a);//The actual insertion line
 		}
 		em.getTransaction().commit();
 		//Calling the method readAnswers() of this service
-		List<Answers> list=readAnswers();		
-		return list;
-	}	
+		request.setAttribute("answers", a);
+		RequestDispatcher rd = request.getRequestDispatcher("/jsp/deleteanswer.jsp");
+		try {
+			rd.forward(request, response);
+		} catch (ServletException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+		
+	
 	@GET
-	@Path("/readtoupdateanswers/{kysymys_id}")  				//WE HAVE 2 ID'S ?????
+	@Path("/readtoupdateanswers/{kysymys_id}")  				
 	@Produces(MediaType.APPLICATION_JSON)
 	public void readToUpdateAnswers(@PathParam("kysymys_id") int id) {
 		EntityManager em=emf.createEntityManager();
@@ -122,16 +130,6 @@ public class ModifyAnswersService {
 		}
 	}
 	
-	public void readAllToUpdateAnswers() {
-		List<Answers> list= readAnswers();
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/answersupdate.jsp");
-		request.setAttribute("answerslist", list);
-		try {
-			rd.forward(request, response);
-		} catch (ServletException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
 	}	
-}
+

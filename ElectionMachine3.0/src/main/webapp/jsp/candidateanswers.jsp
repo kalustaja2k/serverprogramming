@@ -16,12 +16,12 @@
 </head>
 <body>
 
-
-<form action='/rest/modifyanswersservice/addanswers' method='post' accept-charset="utf-8">
+<h2>Muokkaa ehdokkaiden vastauksia</h2>
+<!--  <form action='/rest/modifyanswersservice/addanswers' method='post' accept-charset="utf-8">
 <input type='text' name='vastaus' value=''>
 <input type='text' name='kommentti' value=''>
 <input type='submit' name='ok' value='OK'>
-</form>
+</form>-->
 
 <section class="vastaukset">
 <c:forEach var="answers" items="${requestScope.answerslist }"> 

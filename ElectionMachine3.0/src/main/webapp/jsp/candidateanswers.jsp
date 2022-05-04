@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../header.html" %>
@@ -47,11 +47,11 @@
 
 <section class="mielipide">
 <h3>Vastaukset:</h3> <br>
-<b>1. T‰ysin eri mielt‰ </b> <br>
-<b>2. Jokseenkin eri mielt‰ </b><br>
+<b>1. T√§ysin eri mielt√§ </b> <br>
+<b>2. Jokseenkin eri mielt√§ </b><br>
 <b>3. En osaa sanoa </b> <br>
-<b>4. Jokseenkin samaa mielt‰</b> <br>
-<b>5. T‰ysin samaa mielt‰</b> <br>
+<b>4. Jokseenkin samaa mielt√§</b> <br>
+<b>5. T√§ysin samaa mielt√§</b> <br>
 </section>
 
 

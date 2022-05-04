@@ -39,7 +39,7 @@
 <section class="kysymykset">
 <h3>Kysymykset:</h3> <br>
 <c:forEach var="question" items="${sessionScope.allquestions}">
- <b>${question.kysymys_id }.
+ <b>${question.kysymys_id}
   ${question.kysymys}</b> <br>
 </c:forEach>
 

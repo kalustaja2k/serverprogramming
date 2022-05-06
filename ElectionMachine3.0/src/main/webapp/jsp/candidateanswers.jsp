@@ -17,18 +17,13 @@
 <body>
 
 <h2>Muokkaa ehdokkaiden vastauksia</h2>
-<!--  <form action='/rest/modifyanswersservice/addanswers' method='post' accept-charset="utf-8">
-<input type='text' name='vastaus' value=''>
-<input type='text' name='kommentti' value=''>
-<input type='submit' name='ok' value='OK'>
-</form>-->
 
 <section class="vastaukset">
 <c:forEach var="answers" items="${requestScope.answerslist }"> 
 <b>${answers.kommentti}</b> 
 <b> on ${answers.vastaus}</b>
 
-<a href='http://localhost:8080/rest/modifyanswersservice/deleteanswers/${answers.kysymys_id}' onclick="return window.confirm('?????');">Poista</a> 
+<a href='http://localhost:8080/rest/modifyanswersservice/deleteanswers/${answers.kysymys_id}' onclick="return window.confirm('Haluatko varmasti poistaa vastauksen?');">Poista</a> 
 <a href='http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/${answers.kysymys_id}'>Muokkaa</a>  
 <br> <br>  
 </c:forEach>

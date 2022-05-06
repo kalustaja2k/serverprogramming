@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.GET;
@@ -72,8 +73,8 @@ public class ModifyAnswersService {
 	@POST
 	@Path("/updateanswers")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public void updateAnswers(Answers answers) {
+	@Consumes("application/x-www-form-urlencoded")
+	public void updateAnswers(Answers answers, @FormParam("ehdokas_id") int ehdokas_id, @FormParam("kysymys_id") int kysymys_id, @FormParam("vastaus") int vastaus) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		Answers a =em.find(Answers.class, answers.getEhdokas_id());
@@ -101,15 +102,9 @@ public class ModifyAnswersService {
 		}
 		em.getTransaction().commit();
 		//Calling the method readAnswers() of this service
-		request.setAttribute("answers", a);
-		RequestDispatcher rd = request.getRequestDispatcher("/jsp/deleteanswer.jsp");
-		try {
-			rd.forward(request, response);
-		} catch (ServletException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		
 		}
-	}
+	
 
 	
 	@GET

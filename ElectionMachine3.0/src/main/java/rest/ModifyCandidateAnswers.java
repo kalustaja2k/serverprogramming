@@ -60,7 +60,6 @@ public class ModifyCandidateAnswers extends HttpServlet {
  }
 
 	private Answers readtoupdateanswers(HttpServletRequest request) {
-		//String ehdokas_id=request.getParameter("ehdokas_id");
 		String kysymys_id=request.getParameter("kysymys_id");
 		String uri = "http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/"+kysymys_id; 
 		Client c=ClientBuilder.newClient();
@@ -91,8 +90,6 @@ public class ModifyCandidateAnswers extends HttpServlet {
 	}
 	
 	private List<Answers> readanswers(HttpServletRequest request) {
-		//String kysymys_id=request.getParameter("Kysymys_id");
-		//String ehdokas_id=request.getParameter("ehdokas_id");
 		String uri = "http://localhost:8080/rest/modifyanswersservice/readanswers"; 
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
@@ -114,7 +111,7 @@ public class ModifyCandidateAnswers extends HttpServlet {
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
 		
-		//Here we create an Entity of a Fish object as JSON string format
+		//Here we create an Entity of a Answers object as JSON string format
 		Entity<Answers> e=Entity.entity(a,MediaType.APPLICATION_JSON);
 		
 		//Creating a GenericType to be able to get List of objects

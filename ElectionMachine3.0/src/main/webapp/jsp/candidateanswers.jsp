@@ -28,7 +28,7 @@
 <b>${answers.kommentti}</b> 
 <b> on ${answers.vastaus}</b>
 
-<a href='http://localhost:8080/rest/modifyanswersservice/deleteanswers/${answers.kysymys_id}'>Poista</a> 
+<a href='http://localhost:8080/rest/modifyanswersservice/deleteanswers/${answers.kysymys_id}' onclick="return window.confirm('?????');">Poista</a> 
 <a href='http://localhost:8080/rest/modifyanswersservice/readtoupdateanswers/${answers.kysymys_id}'>Muokkaa</a>  
 <br> <br>  
 </c:forEach>

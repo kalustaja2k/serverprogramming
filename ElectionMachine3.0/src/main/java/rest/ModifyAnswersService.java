@@ -74,13 +74,17 @@ public class ModifyAnswersService {
 	@Path("/updateanswers")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes("application/x-www-form-urlencoded")
-	public void updateAnswers(Answers answers, @FormParam("ehdokas_id") int ehdokas_id, @FormParam("kysymys_id") int kysymys_id, @FormParam("vastaus") int vastaus) {
+	public void updateAnswers(@FormParam("ehdokasid") int ehdokas_id, @FormParam("kysymysid") int kysymys_id, @FormParam("vastaus") int vastaus) {
 		EntityManager em=emf.createEntityManager();
+		Answers a = new Answers();
+		a.setEhdokas_id(ehdokas_id);
+		a.setKysymys_id(kysymys_id);
+		a.setVastaus(vastaus);
 		em.getTransaction().begin();
-		Answers a =em.find(Answers.class, answers.getEhdokas_id());
+		//Answers a =em.find(Answers.class, answers.getEhdokas_id());
 		//Answers a =em.find(Answers.class, answers.getKysymys_id()); 
 		if (a!=null) {
-			em.merge(answers);//The actual update line
+			em.merge(a);//The actual update line
 		}
 		em.getTransaction().commit();
 		//Calling the method readAnswers() of this service

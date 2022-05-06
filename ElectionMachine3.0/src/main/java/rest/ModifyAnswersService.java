@@ -69,11 +69,11 @@ public class ModifyAnswersService {
 		return list;
 	}	
 	
-	@PUT
+	@POST
 	@Path("/updateanswers")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Answers> updateAnswers(Answers answers) {
+	public void updateAnswers(Answers answers) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
 		Answers a =em.find(Answers.class, answers.getEhdokas_id());
@@ -83,12 +83,13 @@ public class ModifyAnswersService {
 		}
 		em.getTransaction().commit();
 		//Calling the method readAnswers() of this service
-		List<Answers> list=readAnswers();		
-		return list;
+//		List<Answers> list=readAnswers();		
+//		return list;
+		readAllAnswers();
 	}	
 	
 	
-	@DELETE
+	@GET
 	@Path("/deleteanswers/{kysymys_id}")									
 	@Produces(MediaType.APPLICATION_JSON)
 	public void deleteAnswers(@PathParam("kysymys_id") int id) { 

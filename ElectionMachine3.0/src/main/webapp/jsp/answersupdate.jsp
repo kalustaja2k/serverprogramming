@@ -6,14 +6,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Muokkaa vastauksia</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jsp.css">
+
 </head>
 <body>
 <h2>Muokkaa vastausta</h2>
-<form action='../updateanswers' method='post'>
+<form action='../updateanswers' method='post' accept= "application/json">
 <h3>Ehdokkaan numero</h3><input type='text' name='ehdokasid' value='${requestScope.answers.ehdokas_id }'>
 <h3>Kysymyksen numero</h3><input type='text' name='kysymysid' value='${requestScope.answers.kysymys_id }'>
 <h3>Vastaus</h3><input type='text' name='vastaus' value='${requestScope.answers.vastaus }'>

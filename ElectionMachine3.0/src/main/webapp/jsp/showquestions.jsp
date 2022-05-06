@@ -21,20 +21,20 @@
 
 <h2>${question.kysymys_id}: ${question.kysymys} </h2>
 
-<input type="radio"  name="${question.kysymys}"
+<input type="radio"  name="kysymys${question.kysymys_id}"
 value="1"><label for="${question.kysymys}1"> 1. Täysin eri mieltä</label><br> 
 
-<input type="radio"  name="${question.kysymys}"
+<input type="radio"  name="kysymys${question.kysymys_id}"
 value="2"><label for="${question.kysymys}2"> 2. Jokseenkin eri mieltä</label><br> 
 
-<input type="radio"  name="${question.kysymys}"
+<input type="radio"  name="kysymys${question.kysymys_id}"
 value="3"><label for="${question.kysymys}3"> 3. En osaa sanoa</label><br> 
 
-<input type="radio"  name="${question.kysymys}"
-value="4"><label for="${question.kysymys}4"> 4. Jokseenkin samaa mielä</label><br> 
+<input type="radio"  name="kysymys${question.kysymys_id}"
+value="4"><label for="${question.kysymys}4"> 4. Jokseenkin samaa mieltä</label><br> 
 
-<input type="radio"  name="${question.kysymys}"
-value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mielä</label><br>
+<input type="radio"  name="kysymys${question.kysymys_id}"
+value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mieltä</label><br>
 
 
 </c:forEach> 

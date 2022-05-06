@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jsp.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/candidateanswer.css">
-    
 </head>
 <body>
 

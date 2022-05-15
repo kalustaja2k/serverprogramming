@@ -14,9 +14,18 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/candidateanswer.css">
 </head>
 <body>
+<h2>Lisää vastaus</h2>
+<form action='/rest/modifyanswersservice/addanswers' method='post'>
+<h3>Ehdokkaan numero</h3><input type='text' name='ehdokasid' value=''>
+<h3>Kysymyksen numero</h3><input type='text' name='kysymysid' value=''>
+<h3>Vastaus</h3><input type='text' name='vastaus' value=''>
+<h3>Kommentti</h3><input type='text' name='kommentti' value=''>
+<br>
+<input type='submit' name='ok' value='Muokkaa'>
+</form>
+
 
 <h2>Muokkaa ehdokkaiden vastauksia</h2>
-
 <section class="vastaukset">
 <c:forEach var="answers" items="${requestScope.answerslist }"> 
 <b>${answers.kommentti}</b> 
@@ -33,7 +42,8 @@
 <h3>Kysymykset:</h3> <br>
 <c:forEach var="question" items="${sessionScope.allquestions}">
  <b>${question.kysymys_id}
-  ${question.kysymys}</b> <br>
+  ${question.kysymys}</b> 
+   <br>
 </c:forEach>
 
 </section>

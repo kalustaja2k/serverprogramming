@@ -7,18 +7,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Muokkaa vastauksia</title>
+<title>Lisaa vastaus</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jsp.css">
 
 </head>
 <body>
-<h2>Muokkaa vastausta</h2>
-<form action='/rest/modifyanswersservice/updateanswers' method='post'>
-<h3>Ehdokkaan numero</h3><input type='text' name='ehdokasid' value='${requestScope.answers.ehdokas_id }'>
-<h3>Kysymyksen numero</h3><input type='text' name='kysymysid' value='${requestScope.answers.kysymys_id }'>
-<h3>Vastaus</h3><input type='text' name='vastaus' value='${requestScope.answers.vastaus }'>
-<h3>Kommentti</h3><input type='text' name='kommentti' value='${requestScope.answers.kommentti }'>
+<h2>Lisaa vastaus</h2>
+<form action='/rest/modifyanswersservice/addanswers' method='post'>
+<h3>Ehdokkaan numero</h3><input type='text' name='ehdokasid' value=''>
+
+<h3>Vastaus</h3><input type='text' name='vastaus' value=''>
+<h3>Kommentti</h3><input type='text' name='kommentti' value=''>
 <br>
 <input type='submit' name='ok' value='Muokkaa'>
 </form>

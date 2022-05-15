@@ -16,7 +16,7 @@
 </head>
 <body>
 <div style=margin-left:10px;>
-<form method="post" action="showquestion">
+<form method="post" action="/rest/modifyanswersservice/addanswers">
 <c:forEach var="question" items="${sessionScope.allquestions}">
 
 <h2>${question.kysymys_id}: ${question.kysymys} </h2>
@@ -39,7 +39,7 @@ value="5"><label for="${question.kysymys}5"> 5. Täysin samaa mieltä</label><br>
 
 </c:forEach> 
 <br>
-<input type="submit" value="Vastaa">
+	<input type="submit" value="Tallenna vastaukset" class='button'>
 <br> <br>
  <br> <br>
 </form>

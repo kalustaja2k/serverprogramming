@@ -1,6 +1,7 @@
 package rest;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -59,37 +60,34 @@ public class ModifyAnswersService {
 	@POST
 	@Path("/addanswers")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Answers> addAnswers(Answers answers) {
+	@Consumes("application/x-www-form-urlencoded")
+	public void addAnswers(@FormParam("ehdokasid") int ehdokas_id,@FormParam("kysymysid") int kysymys_id, @FormParam("vastaus") int vastaus, @FormParam("kommentti") String kommentti) {
+		Answers a = new Answers(ehdokas_id, kysymys_id, vastaus, kommentti);
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(answers);//The actual insertion line
+		em.persist(a);//The actual insertion line
 		em.getTransaction().commit();
-		//Calling the method readAnswers() of this service
-		List<Answers> list=readAnswers();		
-		return list;
-	}	
-	
+		//Calling the method readAllAnswers() of this service
+		readAllAnswers();
+	}
 	@POST
 	@Path("/updateanswers")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes("application/x-www-form-urlencoded")
-	public void updateAnswers(@FormParam("ehdokasid") int ehdokas_id, @FormParam("kysymysid") int kysymys_id, @FormParam("vastaus") int vastaus) {
+	public void updateAnswers(@FormParam("ehdokasid") int ehdokas_id, @FormParam("kysymysid") int kysymys_id, @FormParam("vastaus") int vastaus, @FormParam("kommentti") String kommentti) {
 		EntityManager em=emf.createEntityManager();
 		Answers a = new Answers();
 		a.setEhdokas_id(ehdokas_id);
 		a.setKysymys_id(kysymys_id);
 		a.setVastaus(vastaus);
+		a.setKommentti(kommentti);
 		em.getTransaction().begin();
-		//Answers a =em.find(Answers.class, answers.getEhdokas_id());
-		//Answers a =em.find(Answers.class, answers.getKysymys_id()); 
+		
 		if (a!=null) {
 			em.merge(a);//The actual update line
 		}
 		em.getTransaction().commit();
-		//Calling the method readAnswers() of this service
-//		List<Answers> list=readAnswers();		
-//		return list;
+		//Calling the method readAllAnswers() of this service
 		readAllAnswers();
 	}	
 	
@@ -105,8 +103,8 @@ public class ModifyAnswersService {
 			em.remove(a);//The actual insertion line
 		}
 		em.getTransaction().commit();
-		//Calling the method readAnswers() of this service
-		
+		//Calling the method readAllAnswers() of this service
+		readAllAnswers();
 		}
 	
 

@@ -23,6 +23,19 @@ CREATE TABLE VASTAUKSET (
    KOMMENTTI VARCHAR(50),
    PRIMARY KEY (EHDOKAS_ID, KYSYMYS_ID)
 );
+CREATE TABLE ANSWERS (
+   EHDOKAS_ID INTEGER NOT NULL,
+   KYSYMYS_ID INTEGER NOT NULL,
+   VASTAUS INTEGER,
+   KOMMENTTI VARCHAR(50),
+   PRIMARY KEY (EHDOKAS_ID, KYSYMYS_ID)
+);
+CREATE TABLE answers (
+   	EHDOKAS_ID int not null auto_increment primary key,
+	KYSYMYS_ID int not null auto_increment primary key,
+    	VASTAUS INTEGER,
+   	KOMMENTTI VARCHAR(50)
+   );
 INSERT INTO EHDOKKAAT VALUES (1, "Ahvenjärvi", "Joel", "Suomen Kristillisdemokraatit (KD)", "Uurainen", 86, "Mieluiten tekisin aivan muuta, mutta valtakunta on korjattava. Tulen toimeen noin kahdeksalla kielellä ja olen perehtynyt monen alan asioihin. Kaupunkilais- ja maalaisjärkeä.", "Haluan edistaa Suomea, jossa kenenkään ei tarvitse kärsiä puutetta tai voimattomuuden tunnetta omiin asioihinsa vaikuttamisesta.", "Kansanedustaja");
 INSERT INTO EHDOKKAAT VALUES (2, "Aintila", "Henrik Jeremias", "Suomen ruotsalainen kansanpuolue", "Helsinki", 47, "Olen puheeni pitävä, monipuolisesti asioita harkitseva, perusteellisesti asiat selvittävä, erilaisissa yhteisäissä, yritysmaailmassa ja julkishallinnossa toiminut kolmen lapsen äiti.", "- Inhimillinen toimeentulo ja aito tasa-arvo kaikille statuksesta riippumatta  - Aito itsemääräämisoikeus ja puolueettomuus  - Kansan hyvinvointi yritysvoittojen edelle  - Avoimuus käsiteltävistä asioista!", "Lähihoitaja");
 INSERT INTO EHDOKKAAT VALUES (3, "Aittakumpu", "Alviina", "Vasemmistoliitto", "Jämsä", 46, "Tiedän erilaisia vaiettuja epäkohtia. Esimerkiksi korruptioon ja epärehellisyyteen liittyviä asioita. Jotta demokratia toimisi niin on vaadittavaa täyttä rehellisyyttä.", "Suomen markka euron rinnalle, ja sitä myätä Suomen sisäinen talous kuntoon. Tyäpaikkoja julkiselle ja yksityiselle sektorille; investointeja ja perustuloa Suomen markalla; yritysten toimintaedellytykset huomattavasti helpommiksi ja tyällistäminen kannustavaksi. Veroparatiisikikkailu kuriin mm. rinnakkaisvaluutan avulla.", "Opettaja, kansanedustaja");
@@ -88,8 +101,26 @@ INSERT INTO VASTAUKSET VALUES  (1, 18, 4, "ehdokkaan 1 vastaus kysymykseen 18");
 INSERT INTO VASTAUKSET VALUES  (1, 19, 3, "ehdokkaan 1 vastaus kysymykseen 19");
 INSERT INTO VASTAUKSET VALUES  (2, 1, 3, "ehdokkaan 2 vastaus kysymykseen 1");
 
-create user pena@localhost identified by "kukkuu";
-grant all on vaalikone.* to pena@localhost;
+INSERT INTO ANSWERS VALUES  (1, 1, 2, "ehdokkaan 1 vastaus kysymykseen 1");
+INSERT INTO ANSWERS VALUES  (1, 2, 4, "ehdokkaan 1 vastaus kysymykseen 2");
+INSERT INTO ANSWERS VALUES  (1, 3, 3, "ehdokkaan 1 vastaus kysymykseen 3");
+INSERT INTO ANSWERS VALUES  (1, 4, 2, "ehdokkaan 1 vastaus kysymykseen 4");
+INSERT INTO ANSWERS VALUES  (1, 5, 1, "ehdokkaan 1 vastaus kysymykseen 5");
+INSERT INTO ANSWERS VALUES  (1, 6, 2, "ehdokkaan 1 vastaus kysymykseen 6");
+INSERT INTO ANSWERS VALUES  (1, 7, 5, "ehdokkaan 1 vastaus kysymykseen 7");
+INSERT INTO ANSWERS VALUES  (1, 8, 2, "ehdokkaan 1 vastaus kysymykseen 8");
+INSERT INTO ANSWERS VALUES  (1, 9, 4, "ehdokkaan 1 vastaus kysymykseen 9");
+INSERT INTO ANSWERS VALUES  (1, 10, 1, "ehdokkaan 1 vastaus kysymykseen 10");
+INSERT INTO ANSWERS VALUES  (1, 11, 1, "ehdokkaan 1 vastaus kysymykseen 11");
+INSERT INTO ANSWERS VALUES  (1, 12, 2, "ehdokkaan 1 vastaus kysymykseen 12");
+INSERT INTO ANSWERS VALUES  (1, 13, 4, "ehdokkaan 1 vastaus kysymykseen 13");
+INSERT INTO ANSWERS VALUES  (1, 14, 5, "ehdokkaan 1 vastaus kysymykseen 14");
+INSERT INTO ANSWERS VALUES  (1, 15, 3, "ehdokkaan 1 vastaus kysymykseen 15");
+INSERT INTO ANSWERS VALUES  (1, 16, 1, "ehdokkaan 1 vastaus kysymykseen 16");
+INSERT INTO ANSWERS VALUES  (1, 17, 4, "ehdokkaan 1 vastaus kysymykseen 17");
+INSERT INTO ANSWERS VALUES  (1, 18, 4, "ehdokkaan 1 vastaus kysymykseen 18");
+INSERT INTO ANSWERS VALUES  (1, 19, 3, "ehdokkaan 1 vastaus kysymykseen 19");
+INSERT INTO ANSWERS VALUES  (2, 1, 3, "ehdokkaan 2 vastaus kysymykseen 1");
 
 CREATE TABLE KIRJAUTUMINEN(
 ID INTEGER NOT NULL,
